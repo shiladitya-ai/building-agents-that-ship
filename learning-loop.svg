@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="700" viewBox="0 0 1060 700" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f6fd0"/>
+    </marker>
+  </defs>
+  <rect width="1060" height="700" fill="#ffffff"/>
+  <text x="30" y="40" font-size="25" font-weight="700" fill="#1b1b1f">Learning-from-Production Loop — Signal &#8594; Reward &#8594; Policy, Gated</text>
+  <text x="30" y="66" font-size="14" fill="#5a5a66">The loop, not any single training run, is the product. Climb the ladder only as far as your volume &amp; eval maturity allow.</text>
+
+  <!-- Nodes -->
+  <!-- A Production -->
+  <rect x="55" y="150" width="250" height="96" rx="14" fill="#eef4ff" stroke="#8aa6dd" stroke-width="1.5"/>
+  <text x="180" y="184" font-size="17" font-weight="700" fill="#12306e" text-anchor="middle">1 · Production</text>
+  <text x="180" y="210" font-size="13" fill="#33445f" text-anchor="middle">the agent acts on real work</text>
+  <text x="180" y="230" font-size="13" fill="#33445f" text-anchor="middle">&#8212; every run generates signal</text>
+
+  <!-- B Capture -->
+  <rect x="405" y="150" width="250" height="96" rx="14" fill="#eef4ff" stroke="#8aa6dd" stroke-width="1.5"/>
+  <text x="530" y="180" font-size="17" font-weight="700" fill="#12306e" text-anchor="middle">2 · Capture signal</text>
+  <text x="530" y="204" font-size="12.5" fill="#33445f" text-anchor="middle">traces · human edits/overrides</text>
+  <text x="530" y="222" font-size="12.5" fill="#33445f" text-anchor="middle">eval outcomes · guardrail hits</text>
+  <text x="530" y="240" font-size="12.5" fill="#33445f" text-anchor="middle">task success · customer outcome</text>
+
+  <!-- C Reward -->
+  <rect x="755" y="150" width="250" height="96" rx="14" fill="#eefaf1" stroke="#7cc79a" stroke-width="1.5"/>
+  <text x="880" y="180" font-size="17" font-weight="700" fill="#14562c" text-anchor="middle">3 · Label + reward</text>
+  <text x="880" y="204" font-size="12.5" fill="#2c6b45" text-anchor="middle">calibrated judge / rubric /</text>
+  <text x="880" y="222" font-size="12.5" fill="#2c6b45" text-anchor="middle">preference pairs</text>
+  <text x="880" y="240" font-size="12.5" fill="#8a5a1f" text-anchor="middle" font-weight="700">humans own the definition</text>
+
+  <!-- D Policy -->
+  <rect x="755" y="454" width="250" height="96" rx="14" fill="#eefaf1" stroke="#7cc79a" stroke-width="1.5"/>
+  <text x="880" y="488" font-size="17" font-weight="700" fill="#14562c" text-anchor="middle">4 · Update policy</text>
+  <text x="880" y="512" font-size="12.5" fill="#2c6b45" text-anchor="middle">reward modeling · RLHF / RLAIF</text>
+  <text x="880" y="530" font-size="12.5" fill="#2c6b45" text-anchor="middle">DPO · offline RL on logged traj.</text>
+
+  <!-- E Gate -->
+  <rect x="405" y="454" width="250" height="96" rx="14" fill="#e9f2fd" stroke="#2f6fd0" stroke-width="2"/>
+  <text x="530" y="484" font-size="17" font-weight="700" fill="#1b4e9b" text-anchor="middle">5 · Promotion gate</text>
+  <text x="530" y="508" font-size="12.5" fill="#2c517f" text-anchor="middle">offline eval + canary / shadow</text>
+  <text x="530" y="526" font-size="12.5" fill="#2c517f" text-anchor="middle">+ regression gates</text>
+  <text x="530" y="544" font-size="12" fill="#8a5a1f" text-anchor="middle" font-style="italic">never "the metric went up"</text>
+
+  <!-- back-to-production label -->
+  <rect x="55" y="454" width="250" height="96" rx="14" fill="#f5f7fb" stroke="#c6d2e6" stroke-width="1.5"/>
+  <text x="180" y="492" font-size="16" font-weight="700" fill="#3a4a63" text-anchor="middle">6 · Promote &#8594; ship</text>
+  <text x="180" y="518" font-size="12.5" fill="#5a6b86" text-anchor="middle">the better policy re-enters</text>
+  <text x="180" y="536" font-size="12.5" fill="#5a6b86" text-anchor="middle">production &#8212; loop repeats</text>
+
+  <!-- Arrows clockwise -->
+  <line x1="305" y1="198" x2="405" y2="198" stroke="#2f6fd0" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="655" y1="198" x2="755" y2="198" stroke="#2f6fd0" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="880" y1="246" x2="880" y2="454" stroke="#2f6fd0" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="755" y1="502" x2="655" y2="502" stroke="#2f6fd0" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="405" y1="502" x2="305" y2="502" stroke="#2f6fd0" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="180" y1="454" x2="180" y2="246" stroke="#2f6fd0" stroke-width="2.5" marker-end="url(#a)"/>
+
+  <!-- Center: reward-hacking warning -->
+  <rect x="345" y="286" width="370" height="128" rx="14" fill="#fff6ec" stroke="#e6c69a" stroke-width="1.5"/>
+  <text x="530" y="316" font-size="16" font-weight="700" fill="#8a5a1f" text-anchor="middle">&#9888; Guard the reward</text>
+  <text x="530" y="342" font-size="12.5" fill="#6b5426" text-anchor="middle">An agent optimizes the REWARD, not your intent.</text>
+  <text x="530" y="362" font-size="12.5" fill="#6b5426" text-anchor="middle">With language it learns to SOUND like it met the</text>
+  <text x="530" y="382" font-size="12.5" fill="#6b5426" text-anchor="middle">rubric without doing the work (reward hacking).</text>
+  <text x="530" y="404" font-size="12.5" fill="#8a5a1f" text-anchor="middle" font-weight="700">Keep a human on reward labels for high-stakes behavior.</text>
+
+  <!-- Prereqs footer -->
+  <rect x="55" y="600" width="950" height="72" rx="10" fill="#f5f7fb" stroke="#dfe6f2"/>
+  <text x="75" y="628" font-size="14" font-weight="700" fill="#12306e">Prerequisites (or you'll optimize noise):</text>
+  <text x="75" y="652" font-size="13" fill="#33445f">• Capture signal = Accountability (Pt 4)   • A trustworthy ruler = Evaluation (Pt 3)   • Safe to act on = Reliability (Pt 2)</text>
+  <text x="75" y="670" font-size="12.5" fill="#8a5a1f">Don't climb to RL without real volume, a stable task, and a plateau you can prove — prompt &amp; memory first.</text>
+</svg>

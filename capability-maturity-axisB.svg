@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="640" viewBox="0 0 1120 640" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1120" height="640" fill="#ffffff"/>
+  <text x="30" y="38" font-size="24" font-weight="700" fill="#1b1b1f">Agentic Maturity — Axis B: Capability Dimensions</text>
+  <text x="30" y="62" font-size="14" fill="#5a5a66">Each dimension matures independently (1→5). Governing rule: autonomy (Axis A) must never exceed your weakest dimension here.</text>
+
+  <!-- Column headers -->
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="210" y="82" width="176" height="42" fill="#eef5ef" stroke="#ffffff"/>
+    <text x="298" y="103" font-size="13" font-weight="700" fill="#2b2b30" text-anchor="middle">1 · Ad hoc</text>
+    <text x="298" y="118" font-size="10" fill="#6a6a72" text-anchor="middle">reactive</text>
+    <rect x="386" y="82" width="176" height="42" fill="#dbeede" stroke="#ffffff"/>
+    <text x="474" y="103" font-size="13" font-weight="700" fill="#2b2b30" text-anchor="middle">2 · Repeatable</text>
+    <text x="474" y="118" font-size="10" fill="#6a6a72" text-anchor="middle">documented</text>
+    <rect x="562" y="82" width="176" height="42" fill="#c2e0c9" stroke="#ffffff"/>
+    <text x="650" y="103" font-size="13" font-weight="700" fill="#1f3a28" text-anchor="middle">3 · Managed</text>
+    <text x="650" y="118" font-size="10" fill="#3a4d40" text-anchor="middle">controlled</text>
+    <rect x="738" y="82" width="176" height="42" fill="#97cba6" stroke="#ffffff"/>
+    <text x="826" y="103" font-size="13" font-weight="700" fill="#173021" text-anchor="middle">4 · Measured</text>
+    <text x="826" y="118" font-size="10" fill="#2a4232" text-anchor="middle">quantified</text>
+    <rect x="914" y="82" width="176" height="42" fill="#5fae79" stroke="#ffffff"/>
+    <text x="1002" y="103" font-size="13" font-weight="700" fill="#0e2418" text-anchor="middle">5 · Optimizing</text>
+    <text x="1002" y="118" font-size="10" fill="#173021" text-anchor="middle">self-improving</text>
+  </g>
+
+  <!-- Row 1: Reliability -->
+  <rect x="30" y="128" width="180" height="90" fill="#12306e"/>
+  <text x="120" y="167" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Reliability</text>
+  <text x="120" y="186" font-size="9.5" fill="#c7d6f5" text-anchor="middle">safe failure &amp; recovery</text>
+  <g font-size="9.8" fill="#26302a">
+    <rect x="210" y="128" width="176" height="90" fill="#eef5ef" stroke="#ffffff"/>
+    <text x="298" y="160" text-anchor="middle">best-effort;</text><text x="298" y="174" text-anchor="middle">no rollback</text>
+    <rect x="386" y="128" width="176" height="90" fill="#dbeede" stroke="#ffffff"/>
+    <text x="474" y="160" text-anchor="middle">retries +</text><text x="474" y="174" text-anchor="middle">idempotent tools</text>
+    <rect x="562" y="128" width="176" height="90" fill="#c2e0c9" stroke="#ffffff"/>
+    <text x="650" y="153" text-anchor="middle">sagas, checkpoints,</text><text x="650" y="167" text-anchor="middle">circuit breakers</text>
+    <rect x="738" y="128" width="176" height="90" fill="#97cba6" stroke="#ffffff"/>
+    <text x="826" y="153" text-anchor="middle">SLOs + tested</text><text x="826" y="167" text-anchor="middle">failure; blast-</text><text x="826" y="181" text-anchor="middle">radius controls</text>
+    <rect x="914" y="128" width="176" height="90" fill="#5fae79" stroke="#ffffff"/>
+    <text x="1002" y="160" text-anchor="middle">self-healing;</text><text x="1002" y="174" text-anchor="middle">blast isolation</text>
+  </g>
+
+  <!-- Row 2: Evaluation / Quality -->
+  <rect x="30" y="220" width="180" height="90" fill="#155724"/>
+  <text x="120" y="255" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Evaluation</text>
+  <text x="120" y="272" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">/ Quality</text>
+  <text x="120" y="290" font-size="9.5" fill="#bfe0cc" text-anchor="middle">measurement backbone</text>
+  <g font-size="9.8" fill="#26302a">
+    <rect x="210" y="220" width="176" height="90" fill="#eef5ef" stroke="#ffffff"/>
+    <text x="298" y="252" text-anchor="middle">manual spot-</text><text x="298" y="266" text-anchor="middle">checks ("vibes")</text>
+    <rect x="386" y="220" width="176" height="90" fill="#dbeede" stroke="#ffffff"/>
+    <text x="474" y="252" text-anchor="middle">fixed test</text><text x="474" y="266" text-anchor="middle">prompt suite</text>
+    <rect x="562" y="220" width="176" height="90" fill="#c2e0c9" stroke="#ffffff"/>
+    <text x="650" y="245" text-anchor="middle">golden sets + CI</text><text x="650" y="259" text-anchor="middle">regression +</text><text x="650" y="273" text-anchor="middle">trajectory eval</text>
+    <rect x="738" y="220" width="176" height="90" fill="#97cba6" stroke="#ffffff"/>
+    <text x="826" y="252" text-anchor="middle">online guardrail</text><text x="826" y="266" text-anchor="middle">metrics + canary</text>
+    <rect x="914" y="220" width="176" height="90" fill="#5fae79" stroke="#ffffff"/>
+    <text x="1002" y="245" text-anchor="middle">continuous online</text><text x="1002" y="259" text-anchor="middle">eval; auto-gate</text><text x="1002" y="273" text-anchor="middle">on regression</text>
+  </g>
+
+  <!-- Row 3: Accountability -->
+  <rect x="30" y="312" width="180" height="90" fill="#3d2a75"/>
+  <text x="120" y="351" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Accountability</text>
+  <text x="120" y="370" font-size="9.5" fill="#e7ddfb" text-anchor="middle">attributable &amp; replayable</text>
+  <g font-size="9.8" fill="#26302a">
+    <rect x="210" y="312" width="176" height="90" fill="#eef5ef" stroke="#ffffff"/>
+    <text x="298" y="362" text-anchor="middle">opaque logs</text>
+    <rect x="386" y="312" width="176" height="90" fill="#dbeede" stroke="#ffffff"/>
+    <text x="474" y="362" text-anchor="middle">structured logs</text>
+    <rect x="562" y="312" width="176" height="90" fill="#c2e0c9" stroke="#ffffff"/>
+    <text x="650" y="345" text-anchor="middle">full audit trail +</text><text x="650" y="359" text-anchor="middle">action attribution</text>
+    <rect x="738" y="312" width="176" height="90" fill="#97cba6" stroke="#ffffff"/>
+    <text x="826" y="345" text-anchor="middle">explainable</text><text x="826" y="359" text-anchor="middle">decisions +</text><text x="826" y="373" text-anchor="middle">trace replay</text>
+    <rect x="914" y="312" width="176" height="90" fill="#5fae79" stroke="#ffffff"/>
+    <text x="1002" y="345" text-anchor="middle">per-action owner;</text><text x="1002" y="359" text-anchor="middle">deterministic</text><text x="1002" y="373" text-anchor="middle">replay + policy gov</text>
+  </g>
+
+  <!-- Row 4: Learning / RL -->
+  <rect x="30" y="404" width="180" height="90" fill="#8a3b00"/>
+  <text x="120" y="443" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Learning / RL</text>
+  <text x="120" y="462" font-size="9.5" fill="#ffe6d3" text-anchor="middle">improve from signal</text>
+  <g font-size="9.8" fill="#26302a">
+    <rect x="210" y="404" width="176" height="90" fill="#eef5ef" stroke="#ffffff"/>
+    <text x="298" y="454" text-anchor="middle">static prompts</text>
+    <rect x="386" y="404" width="176" height="90" fill="#dbeede" stroke="#ffffff"/>
+    <text x="474" y="447" text-anchor="middle">manual prompt</text><text x="474" y="461" text-anchor="middle">iteration</text>
+    <rect x="562" y="404" width="176" height="90" fill="#c2e0c9" stroke="#ffffff"/>
+    <text x="650" y="447" text-anchor="middle">offline eval-</text><text x="650" y="461" text-anchor="middle">driven tuning</text>
+    <rect x="738" y="404" width="176" height="90" fill="#97cba6" stroke="#ffffff"/>
+    <text x="826" y="447" text-anchor="middle">RLHF / RLAIF on</text><text x="826" y="461" text-anchor="middle">curated data</text>
+    <rect x="914" y="404" width="176" height="90" fill="#5fae79" stroke="#ffffff"/>
+    <text x="1002" y="447" text-anchor="middle">closed-loop from</text><text x="1002" y="461" text-anchor="middle">prod traces;</text><text x="1002" y="475" text-anchor="middle">verifier rewards</text>
+  </g>
+
+  <!-- Row 5: Self-Healing -->
+  <rect x="30" y="496" width="180" height="90" fill="#7a1f2b"/>
+  <text x="120" y="535" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Self-Healing</text>
+  <text x="120" y="554" font-size="9.5" fill="#f3cdd2" text-anchor="middle">recovery as a property</text>
+  <g font-size="9.8" fill="#26302a">
+    <rect x="210" y="496" width="176" height="90" fill="#eef5ef" stroke="#ffffff"/>
+    <text x="298" y="539" text-anchor="middle">human fixes</text><text x="298" y="553" text-anchor="middle">everything</text>
+    <rect x="386" y="496" width="176" height="90" fill="#dbeede" stroke="#ffffff"/>
+    <text x="474" y="539" text-anchor="middle">alerting +</text><text x="474" y="553" text-anchor="middle">runbooks</text>
+    <rect x="562" y="496" width="176" height="90" fill="#c2e0c9" stroke="#ffffff"/>
+    <text x="650" y="539" text-anchor="middle">detect +</text><text x="650" y="553" text-anchor="middle">suggested fix</text>
+    <rect x="738" y="496" width="176" height="90" fill="#97cba6" stroke="#ffffff"/>
+    <text x="826" y="532" text-anchor="middle">semi-auto</text><text x="826" y="546" text-anchor="middle">remediate</text><text x="826" y="560" text-anchor="middle">(propose+approve)</text>
+    <rect x="914" y="496" width="176" height="90" fill="#5fae79" stroke="#ffffff"/>
+    <text x="1002" y="532" text-anchor="middle">autonomous</text><text x="1002" y="546" text-anchor="middle">detect→remediate→</text><text x="1002" y="560" text-anchor="middle">verify w/ guardrails</text>
+  </g>
+
+  <!-- maturity arrow -->
+  <text x="210" y="612" font-size="11" fill="#8a8a96">Increasing maturity &#8594;</text>
+  <rect x="330" y="604" width="700" height="8" rx="4" fill="url(#g2)"/>
+  <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#eef5ef"/><stop offset="1" stop-color="#5fae79"/></linearGradient></defs>
+  <polygon points="1035,608 1020,601 1020,615" fill="#5fae79"/>
+</svg>

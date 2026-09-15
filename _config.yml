@@ -1,0 +1,10 @@
+title: Building Agents That Ship
+description: >-
+  A vendor-neutral series on production-grade agentic AI — reliability,
+  evaluation, accountability, learning, and self-healing for high-stakes
+  enterprise workflows.
+theme: jekyll-theme-cayman
+show_downloads: false
+exclude:
+  - build/
+  - "*.docx"

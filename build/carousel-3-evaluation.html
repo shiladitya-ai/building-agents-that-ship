@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root{
+    --navy:#0B1F3A; --navy2:#12305C; --ink:#0E1726;
+    --paper:#F7F5F0; --accent:#4EA8DE; --accent2:#2E86C1;
+    --warm:#E8833A; --green:#3FB27F; --muted:#9FB3CE; --line:#26456F;
+  }
+  html,body{ font-family:Arial,Helvetica,sans-serif; color:#EAF1FB; }
+  .slide{
+    position:relative; width:1080px; height:1350px; overflow:hidden;
+    background:linear-gradient(160deg,#0B1F3A 0%, #12305C 60%, #0E2647 100%);
+    padding:96px 92px 120px; display:flex; flex-direction:column;
+    page-break-after:always; -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .slide:last-child{ page-break-after:auto; }
+  .kicker{ font-size:24px; letter-spacing:3px; text-transform:uppercase; color:var(--accent);
+    font-weight:700; margin-bottom:26px; }
+  h1{ font-family:Georgia,'Times New Roman',serif; font-weight:700; line-height:1.06; }
+  .cover h1{ font-size:92px; }
+  h2{ font-family:Georgia,serif; font-size:64px; line-height:1.08; font-weight:700; margin-bottom:34px; }
+  p{ font-size:34px; line-height:1.5; color:#DCE7F6; }
+  .lead{ font-size:40px; line-height:1.42; color:#F2F7FE; }
+  .big{ font-size:40px; }
+  .muted{ color:var(--muted); }
+  .spacer{ flex:1; }
+  .footer{ position:absolute; left:92px; right:92px; bottom:56px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:24px; color:var(--muted); border-top:1px solid var(--line); padding-top:22px; }
+  .footer b{ color:#CFE0F5; font-weight:700; }
+  .chip{ display:inline-block; background:rgba(78,168,222,.16); border:1px solid var(--accent);
+    color:#CDE7FA; font-size:26px; padding:10px 22px; border-radius:999px; margin:0 12px 16px 0; }
+  ul{ list-style:none; }
+  li{ font-size:36px; line-height:1.35; margin-bottom:26px; padding-left:52px; position:relative; color:#E7F0FB; }
+  li::before{ content:""; position:absolute; left:0; top:14px; width:22px; height:22px;
+    border-radius:6px; background:var(--accent); }
+  li.warm::before{ background:var(--warm); }
+  li.green::before{ background:var(--green); }
+  .card{ background:rgba(255,255,255,.05); border:1px solid var(--line); border-radius:22px; padding:40px 44px; }
+  .accentbar{ width:120px; height:10px; background:var(--accent); border-radius:8px; margin-bottom:40px; }
+  .warmbar{ background:var(--warm); }
+  .highlight{ color:var(--warm); }
+  .two{ display:flex; gap:28px; }
+  .two .col{ flex:1; }
+  .col h3{ font-family:Georgia,serif; font-size:34px; margin-bottom:20px; color:#F4F9FF; }
+  .col.off h3{ color:var(--accent); }
+  .col.on h3{ color:var(--green); }
+  .col li{ font-size:29px; margin-bottom:18px; padding-left:42px; }
+  .col li::before{ width:18px; height:18px; top:11px; }
+  .stamp{ font-family:Georgia,serif; font-size:46px; color:#F4F9FF; line-height:1.24; }
+  .swipe{ position:absolute; right:92px; bottom:120px; font-size:26px; color:var(--accent);
+    font-weight:700; letter-spacing:1px; }
+  .swipe::after{ content:" \2192"; }
+  .flow{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:14px; }
+  .node{ background:rgba(78,168,222,.14); border:1px solid var(--accent); border-radius:14px;
+    padding:20px 24px; font-size:30px; color:#E7F0FB; font-weight:700; }
+  .arrow{ color:var(--accent); font-size:38px; font-weight:700; }
+  .x{ color:var(--warm); }
+  .check{ color:var(--green); }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide cover">
+  <div class="kicker">Building Agents That Ship &middot; Part 3</div>
+  <div class="accentbar warmbar"></div>
+  <h1>The agent said the tenant was <span class="highlight">ready.</span><br>It wasn&rsquo;t.</h1>
+  <div class="spacer"></div>
+  <p class="lead">The Evaluation Gap &mdash; why you can&rsquo;t ship judgment you can&rsquo;t measure, and how to measure it.</p>
+  <div class="swipe">Swipe</div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 1 / 8</span></div>
+</section>
+
+<!-- 2 THE STORY -->
+<section class="slide">
+  <div class="kicker">The quiet failure</div>
+  <h2>A confident report that was simply wrong.</h2>
+  <p class="lead">The agent assessed the tenant, wrote a clean readiness summary, and marked it <b>green</b>. Half the accounts were never actually verified.</p>
+  <div class="spacer"></div>
+  <div class="card">
+    <p class="big">Nothing crashed. No stack trace. Just a <span class="highlight">fluent, plausible judgment</span> that nobody caught &mdash; until it reached the customer.</p>
+  </div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 2 / 8</span></div>
+</section>
+
+<!-- 3 THE REFRAME -->
+<section class="slide">
+  <div class="kicker">The reframe</div>
+  <div class="accentbar"></div>
+  <h2>A broken action crashes.<br>A broken judgment <span class="highlight">lies fluently.</span></h2>
+  <p class="lead">Reliability engineering catches the first. It does nothing for the second.</p>
+  <div class="spacer"></div>
+  <p class="big muted">The moment an agent <i>decides</i> rather than just <i>executes</i>, correctness stops being a runtime property &mdash; it becomes an <b style="color:#CFE0F5">evaluation problem.</b></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 3 / 8</span></div>
+</section>
+
+<!-- 4 THE TRAP -->
+<section class="slide">
+  <div class="kicker">The trap</div>
+  <h2>Fluency reads as correctness.</h2>
+  <p class="lead" style="margin-bottom:36px;">Polished output disarms reviewers. A well-formatted, confident answer gets <b>rubber-stamped</b> &mdash; the better the prose, the less it&rsquo;s scrutinized.</p>
+  <div class="card">
+    <p class="big">Your evaluation has to reward <span class="check">being right</span>, not <span class="x">sounding right.</span> Those are different signals, and only one of them ships safely.</p>
+  </div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 4 / 8</span></div>
+</section>
+
+<!-- 5 FIX 1 -->
+<section class="slide">
+  <div class="kicker">Fix 1</div>
+  <h2>Score the trajectory, not just the destination.</h2>
+  <p class="lead" style="margin-bottom:30px;">Two agents reach &ldquo;ready.&rdquo; One <b>verified</b> every account; one <b>guessed</b>. Same answer &mdash; very different systems.</p>
+  <div class="flow">
+    <span class="node">Plan</span><span class="arrow">&rarr;</span>
+    <span class="node">Tool calls</span><span class="arrow">&rarr;</span>
+    <span class="node">Evidence</span><span class="arrow">&rarr;</span>
+    <span class="node">Answer</span>
+  </div>
+  <div class="spacer"></div>
+  <p class="big muted">Grade the <b style="color:#CFE0F5">path</b>: did it check what it claimed to check? Outcome-only metrics can&rsquo;t tell luck from judgment.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 5 / 8</span></div>
+</section>
+
+<!-- 6 FIX 2 -->
+<section class="slide">
+  <div class="kicker">Fix 2 &mdash; two layers</div>
+  <h2>Offline gate. Online guardrail.</h2>
+  <div class="two">
+    <div class="col off">
+      <h3>Offline gate</h3>
+      <ul>
+        <li>Golden set of hard cases</li>
+        <li>Runs in CI, blocks release</li>
+        <li>k-run consistency check</li>
+      </ul>
+    </div>
+    <div class="col on">
+      <h3>Online guardrail</h3>
+      <ul>
+        <li class="green">Canary on live traffic</li>
+        <li class="green">Watch escalation rate</li>
+        <li class="green">Auto-rollback on drift</li>
+      </ul>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <p class="big muted">One proves it&rsquo;s good <b style="color:#CFE0F5">before</b> ship. One proves it&rsquo;s <b style="color:#CFE0F5">still</b> good after.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 6 / 8</span></div>
+</section>
+
+<!-- 7 LLM-AS-JUDGE -->
+<section class="slide">
+  <div class="kicker">On LLM-as-judge</div>
+  <div class="accentbar"></div>
+  <h2>Useful tool. Not an oracle.</h2>
+  <ul>
+    <li><b>Calibrate</b> it against human labels before you trust a single score.</li>
+    <li><b>Distill</b> its agreement into cheaper, faster checks where you can.</li>
+    <li class="warm"><b>Backstop</b> with hard rules for anything safety- or money-critical.</li>
+  </ul>
+  <p class="big muted">A judge that shares the generator&rsquo;s blind spots will <b style="color:#CFE0F5">confidently co-sign the same mistake.</b></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 7 / 8</span></div>
+</section>
+
+<!-- 8 CTA -->
+<section class="slide cta">
+  <div class="kicker">Take this with you</div>
+  <div class="accentbar warmbar"></div>
+  <h2>An evaluation-readiness checklist &mdash; and a confidence threshold.</h2>
+  <div class="card">
+    <p class="big">Do you score the <b>trajectory</b>? Is there an <b>offline gate</b> in CI and an <b>online guardrail</b>? Below the threshold &mdash; does it <b>escalate</b> instead of guess?</p>
+  </div>
+  <div class="spacer"></div>
+  <p class="lead">Full post + checklist &mdash; link in the comments.<br><span class="muted">Part 2 covered reliability. Follow for Part 4: Accountability &amp; Auditability.</span></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 8 / 8</span></div>
+</section>
+
+</body>
+</html>

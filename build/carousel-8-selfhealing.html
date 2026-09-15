@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root{
+    --navy:#0B1F3A; --navy2:#12305C; --accent:#4EA8DE; --accent2:#2E86C1;
+    --warm:#E8833A; --green:#3FB27F; --muted:#9FB3CE; --line:#26456F;
+  }
+  html,body{ font-family:Arial,Helvetica,sans-serif; color:#EAF1FB; }
+  .slide{
+    position:relative; width:1080px; height:1350px; overflow:hidden;
+    background:linear-gradient(160deg,#0B1F3A 0%, #12305C 60%, #0E2647 100%);
+    padding:96px 92px 120px; display:flex; flex-direction:column;
+    page-break-after:always; -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .slide:last-child{ page-break-after:auto; }
+  .kicker{ font-size:24px; letter-spacing:3px; text-transform:uppercase; color:var(--accent);
+    font-weight:700; margin-bottom:26px; }
+  h1{ font-family:Georgia,'Times New Roman',serif; font-weight:700; line-height:1.06; }
+  .cover h1{ font-size:82px; }
+  h2{ font-family:Georgia,serif; font-size:60px; line-height:1.08; font-weight:700; margin-bottom:34px; }
+  p{ font-size:34px; line-height:1.5; color:#DCE7F6; }
+  .lead{ font-size:40px; line-height:1.42; color:#F2F7FE; }
+  .big{ font-size:40px; }
+  .muted{ color:var(--muted); }
+  .spacer{ flex:1; }
+  .footer{ position:absolute; left:92px; right:92px; bottom:56px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:24px; color:var(--muted); border-top:1px solid var(--line); padding-top:22px; }
+  .footer b{ color:#CFE0F5; font-weight:700; }
+  ul{ list-style:none; }
+  li{ font-size:33px; line-height:1.3; margin-bottom:22px; padding-left:52px; position:relative; color:#E7F0FB; }
+  li::before{ content:""; position:absolute; left:0; top:12px; width:22px; height:22px;
+    border-radius:6px; background:var(--accent); }
+  li.warm::before{ background:var(--warm); }
+  li.green::before{ background:var(--green); }
+  li b{ color:#FFFFFF; }
+  .card{ background:rgba(255,255,255,.05); border:1px solid var(--line); border-radius:22px; padding:40px 44px; }
+  .accentbar{ width:120px; height:10px; background:var(--accent); border-radius:8px; margin-bottom:40px; }
+  .warmbar{ background:var(--warm); }
+  .highlight{ color:var(--warm); }
+  .swipe{ position:absolute; right:92px; bottom:120px; font-size:26px; color:var(--accent);
+    font-weight:700; letter-spacing:1px; }
+  .swipe::after{ content:" \2192"; }
+  .logline{ font-family:"Consolas","Courier New",monospace; font-size:29px; color:#F2B48A;
+    background:rgba(0,0,0,.28); border:1px solid var(--line); border-radius:14px; padding:26px 30px; line-height:1.5; }
+  .flow{ font-family:"Consolas","Courier New",monospace; font-size:30px; color:#9CC9F2;
+    background:rgba(0,0,0,.24); border:1px solid var(--line); border-radius:14px; padding:30px 32px;
+    line-height:1.85; text-align:center; }
+  .ladder{ display:flex; flex-direction:column; gap:15px; margin-top:6px; }
+  .rung{ display:flex; align-items:center; gap:22px; background:rgba(255,255,255,.05);
+    border:1px solid var(--line); border-radius:14px; padding:20px 26px; }
+  .rung .n{ font-family:Georgia,serif; font-size:28px; font-weight:700; color:#0B1F3A;
+    background:var(--accent); border-radius:10px; min-width:50px; height:50px; display:flex;
+    align-items:center; justify-content:center; }
+  .rung.g .n{ background:var(--green); }
+  .rung.top .n{ background:var(--warm); }
+  .rung .t{ font-size:28px; color:#E7F0FB; }
+  .rung .t b{ color:#fff; }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide cover">
+  <div class="kicker">Building Agents That Ship &middot; Part 8</div>
+  <div class="accentbar warmbar"></div>
+  <h1>It paged a human at 3 a.m. <span class="highlight">to restart a job.</span></h1>
+  <div class="spacer"></div>
+  <p class="lead">Self-healing systems. Why recovery should be a property of the system &mdash; not a task for your pager.</p>
+  <div class="swipe">Swipe</div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 1 / 8</span></div>
+</section>
+
+<!-- 2 THE STORY -->
+<section class="slide">
+  <div class="kicker">A 30-second timeout</div>
+  <h2>The alert was almost insulting.</h2>
+  <div class="logline">upstream API blips &rarr; agent stops<br>&rarr; marks run failed &rarr; pages on-call<br>&rarr; human wakes, clicks <b style="color:#8FE0B4">retry</b> &rarr; succeeds</div>
+  <div class="spacer"></div>
+  <p class="big muted">Human judgment applied: <span class="highlight">none.</span> Human sleep lost: a night. Now multiply that by a fleet.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 2 / 8</span></div>
+</section>
+
+<!-- 3 THE REFRAME -->
+<section class="slide">
+  <div class="kicker">The reframe</div>
+  <div class="accentbar"></div>
+  <h2>It could <b style="color:#fff">act</b> &mdash; but it couldn&rsquo;t <span class="highlight">recover.</span></h2>
+  <p class="lead">Those are not the same capability. We perfect the happy path, then treat every fault as an exception to escalate.</p>
+  <div class="spacer"></div>
+  <p class="big muted">But in production, the <b style="color:#CFE0F5">unhappy path is the job.</b> A system that only works when nothing goes wrong isn&rsquo;t reliable &mdash; it&rsquo;s lucky.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 3 / 8</span></div>
+</section>
+
+<!-- 4 THE LOOP -->
+<section class="slide">
+  <div class="kicker">Recovery as a system property</div>
+  <h2>The loop.</h2>
+  <div class="flow">
+    Detect<br>
+    &darr;<br>
+    Diagnose<br>
+    &darr;<br>
+    Remediate<br>
+    &darr;<br>
+    Verify<br>
+    &darr;<br>
+    <span style="color:#8FE0B4">Learn</span>
+  </div>
+  <div class="spacer"></div>
+  <p class="big muted">Notice its own outcome, find the cause, act within bounds, confirm the fix, remember it &mdash; without waking anyone.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 4 / 8</span></div>
+</section>
+
+<!-- 5 VERIFY -->
+<section class="slide">
+  <div class="kicker">The stage everyone skips</div>
+  <div class="accentbar"></div>
+  <h2>A remediation is a <span class="highlight">hypothesis</span> &mdash; not a fact.</h2>
+  <p class="lead" style="margin-bottom:30px;">Check the post-condition. Re-run the eval. Confirm the guardrails still hold &mdash; <b style="color:#fff">before</b> the run continues.</p>
+  <div class="card">
+    <p class="big">An unverified fix is just a second, more confident failure. <b>Verify</b> is what makes self-healing safe instead of scary.</p>
+  </div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 5 / 8</span></div>
+</section>
+
+<!-- 6 THE LADDER -->
+<section class="slide">
+  <div class="kicker">Earned per failure class &mdash; never blanket</div>
+  <h2>The remediation ladder.</h2>
+  <div class="ladder">
+    <div class="rung"><div class="n">0</div><div class="t"><b>Alert only</b> &mdash; detect + suggest a fix</div></div>
+    <div class="rung"><div class="n">1</div><div class="t"><b>Auto-retry the safe stuff</b> &mdash; kills most 3 a.m. pages</div></div>
+    <div class="rung"><div class="n">2</div><div class="t"><b>Propose &amp; approve</b> &mdash; default for state-mutating ops</div></div>
+    <div class="rung g"><div class="n">3</div><div class="t"><b>Bounded autonomous</b> &mdash; hard blast radius + verify</div></div>
+    <div class="rung top"><div class="n">4</div><div class="t"><b>Autonomous + learning</b> &mdash; feed outcomes to policy</div></div>
+  </div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 6 / 8</span></div>
+</section>
+
+<!-- 7 WHEN NOT TO -->
+<section class="slide">
+  <div class="kicker">When NOT to self-heal</div>
+  <div class="accentbar warmbar"></div>
+  <h2>Some failures should <span class="highlight">stop</span> you, not heal.</h2>
+  <ul>
+    <li class="warm"><b>Can&rsquo;t diagnose reliably?</b> Automation amplifies the guess.</li>
+    <li class="warm"><b>Can&rsquo;t verify?</b> No post-condition = hopeful action.</li>
+    <li class="warm"><b>Blast radius unbounded?</b> A wrong fix beats the failure.</li>
+    <li class="green"><b>Failure is a signal.</b> Healing has a budget &mdash; then fail loud.</li>
+  </ul>
+  <p class="big muted">Self-healing you can&rsquo;t verify is a liability in a reliability costume.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 7 / 8</span></div>
+</section>
+
+<!-- 8 CTA -->
+<section class="slide cta">
+  <div class="kicker">Take this with you</div>
+  <div class="accentbar warmbar"></div>
+  <h2>The self-healing loop &mdash; and a remediation-readiness checklist.</h2>
+  <div class="card">
+    <p class="big">Detect it? Diagnose it? Remediation matches the class? Verify every fix? Blast radius bounded? Autonomy matches maturity? Healing has a budget?</p>
+  </div>
+  <div class="spacer"></div>
+  <p class="lead">Full post + loop diagram + ladder &mdash; link in the comments.<br><span class="muted">Parts 2&ndash;7 make it work and get better; this is how it survives. Next: Part 9 &mdash; the finale, Securing the Tool Surface.</span></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 8 / 8</span></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="620" viewBox="0 0 1060 620" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1060" height="620" fill="#ffffff"/>
+  <text x="30" y="42" font-size="26" font-weight="700" fill="#1b1b1f">Autonomy Maturity Model for Enterprise Agents</text>
+  <text x="30" y="70" font-size="15" fill="#5a5a66">Axis A: autonomy L0–L5. Each level demands a matching control plane (see Axis B: Reliability, Evaluation, Accountability, Learning, Self-Healing).</text>
+  <text x="30" y="92" font-size="13" fill="#8a8a96" font-style="italic">Thesis: autonomy without recoverability is a liability.</text>
+
+  <!-- arrow band -->
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#dbe7ff"/>
+      <stop offset="1" stop-color="#1f4fd8"/>
+    </linearGradient>
+  </defs>
+  <rect x="30" y="108" width="1000" height="10" rx="5" fill="url(#grad)"/>
+  <polygon points="1030,113 1015,105 1015,121" fill="#1f4fd8"/>
+  <text x="30" y="140" font-size="12" fill="#8a8a96">Increasing autonomy · increasing blast radius · increasing control requirements &#8594;</text>
+
+  <!-- cards -->
+  <!-- L0 -->
+  <g>
+    <rect x="30" y="152" width="160" height="440" rx="10" fill="#f5f7fb" stroke="#d9deea"/>
+    <rect x="30" y="152" width="160" height="52" rx="10" fill="#c7d6f5"/>
+    <rect x="30" y="188" width="160" height="16" fill="#c7d6f5"/>
+    <text x="42" y="178" font-size="16" font-weight="700" fill="#12306e">L0 · Manual</text>
+    <text x="42" y="198" font-size="11" fill="#20407a">AI assists, human acts</text>
+    <text x="42" y="230" font-size="11" font-weight="700" fill="#1b1b1f">Human role</text>
+    <text x="42" y="248" font-size="11" fill="#42424c">Operator — does all work</text>
+    <text x="42" y="282" font-size="11" font-weight="700" fill="#1b1b1f">Controls required</text>
+    <text x="42" y="300" font-size="11" fill="#42424c">None</text>
+    <text x="42" y="352" font-size="11" font-weight="700" fill="#1b1b1f">Blast radius</text>
+    <text x="42" y="370" font-size="11" fill="#188038">None</text>
+    <text x="42" y="404" font-size="11" font-weight="700" fill="#1b1b1f">Onboarding example</text>
+    <text x="42" y="422" font-size="11" fill="#42424c">AI drafts a runbook;</text>
+    <text x="42" y="437" font-size="11" fill="#42424c">human provisions.</text>
+  </g>
+  <!-- L1 -->
+  <g>
+    <rect x="200" y="152" width="160" height="440" rx="10" fill="#f5f7fb" stroke="#d9deea"/>
+    <rect x="200" y="152" width="160" height="52" rx="10" fill="#a9c1f0"/>
+    <rect x="200" y="188" width="160" height="16" fill="#a9c1f0"/>
+    <text x="212" y="178" font-size="16" font-weight="700" fill="#12306e">L1 · Copilot</text>
+    <text x="212" y="198" font-size="11" fill="#20407a">Suggests each step</text>
+    <text x="212" y="230" font-size="11" font-weight="700" fill="#1b1b1f">Human role</text>
+    <text x="212" y="248" font-size="11" fill="#42424c">Approves every action</text>
+    <text x="212" y="282" font-size="11" font-weight="700" fill="#1b1b1f">Controls required</text>
+    <text x="212" y="300" font-size="11" fill="#42424c">Per-action approval</text>
+    <text x="212" y="315" font-size="11" fill="#42424c">gate; audit log</text>
+    <text x="212" y="352" font-size="11" font-weight="700" fill="#1b1b1f">Blast radius</text>
+    <text x="212" y="370" font-size="11" fill="#188038">None (gated)</text>
+    <text x="212" y="404" font-size="11" font-weight="700" fill="#1b1b1f">Onboarding example</text>
+    <text x="212" y="422" font-size="11" fill="#42424c">Agent proposes each</text>
+    <text x="212" y="437" font-size="11" fill="#42424c">provisioning step.</text>
+  </g>
+  <!-- L2 -->
+  <g>
+    <rect x="370" y="152" width="160" height="440" rx="10" fill="#f5f7fb" stroke="#d9deea"/>
+    <rect x="370" y="152" width="160" height="52" rx="10" fill="#7ea3ea"/>
+    <rect x="370" y="188" width="160" height="16" fill="#7ea3ea"/>
+    <text x="382" y="178" font-size="16" font-weight="700" fill="#0e2657">L2 · Supervised</text>
+    <text x="382" y="198" font-size="11" fill="#12306e">Executes, gated writes</text>
+    <text x="382" y="230" font-size="11" font-weight="700" fill="#1b1b1f">Human role</text>
+    <text x="382" y="248" font-size="11" fill="#42424c">Approves state changes</text>
+    <text x="382" y="282" font-size="11" font-weight="700" fill="#1b1b1f">Controls required</text>
+    <text x="382" y="300" font-size="11" fill="#42424c">HITL on writes;</text>
+    <text x="382" y="315" font-size="11" fill="#42424c">idempotent tools; audit</text>
+    <text x="382" y="352" font-size="11" font-weight="700" fill="#1b1b1f">Blast radius</text>
+    <text x="382" y="370" font-size="11" fill="#e8830c">Single action</text>
+    <text x="382" y="404" font-size="11" font-weight="700" fill="#1b1b1f">Onboarding example</text>
+    <text x="382" y="422" font-size="11" fill="#42424c">Agent runs steps;</text>
+    <text x="382" y="437" font-size="11" fill="#42424c">human okays each write.</text>
+  </g>
+  <!-- L3 -->
+  <g>
+    <rect x="540" y="152" width="160" height="440" rx="10" fill="#f5f7fb" stroke="#d9deea"/>
+    <rect x="540" y="152" width="160" height="52" rx="10" fill="#4f7fe0"/>
+    <rect x="540" y="188" width="160" height="16" fill="#4f7fe0"/>
+    <text x="552" y="178" font-size="16" font-weight="700" fill="#ffffff">L3 · Bounded</text>
+    <text x="552" y="198" font-size="11" fill="#eaf0ff">Multi-step in guardrails</text>
+    <text x="552" y="230" font-size="11" font-weight="700" fill="#1b1b1f">Human role</text>
+    <text x="552" y="248" font-size="11" fill="#42424c">Approves at checkpoints</text>
+    <text x="552" y="282" font-size="11" font-weight="700" fill="#1b1b1f">Controls required</text>
+    <text x="552" y="300" font-size="11" fill="#42424c">Sagas + rollback;</text>
+    <text x="552" y="315" font-size="11" fill="#42424c">checkpoints; circuit</text>
+    <text x="552" y="330" font-size="11" fill="#42424c">breakers; confidence gate</text>
+    <text x="552" y="352" font-size="11" font-weight="700" fill="#1b1b1f">Blast radius</text>
+    <text x="552" y="370" font-size="11" fill="#e8830c">Bounded flow</text>
+    <text x="552" y="404" font-size="11" font-weight="700" fill="#1b1b1f">Onboarding example</text>
+    <text x="552" y="422" font-size="11" fill="#42424c">Full provisioning flow,</text>
+    <text x="552" y="437" font-size="11" fill="#42424c">human okays milestones.</text>
+  </g>
+  <!-- L4 -->
+  <g>
+    <rect x="710" y="152" width="160" height="440" rx="10" fill="#f5f7fb" stroke="#d9deea"/>
+    <rect x="710" y="152" width="160" height="52" rx="10" fill="#2b5fd6"/>
+    <rect x="710" y="188" width="160" height="16" fill="#2b5fd6"/>
+    <text x="722" y="178" font-size="16" font-weight="700" fill="#ffffff">L4 · Conditional</text>
+    <text x="722" y="198" font-size="11" fill="#eaf0ff">End-to-end, escalates</text>
+    <text x="722" y="230" font-size="11" font-weight="700" fill="#1b1b1f">Human role</text>
+    <text x="722" y="248" font-size="11" fill="#42424c">On-call for exceptions</text>
+    <text x="722" y="282" font-size="11" font-weight="700" fill="#1b1b1f">Controls required</text>
+    <text x="722" y="300" font-size="11" fill="#42424c">Full reliability plane +</text>
+    <text x="722" y="315" font-size="11" fill="#42424c">online eval; auto-</text>
+    <text x="722" y="330" font-size="11" fill="#42424c">rollback; anomaly detect</text>
+    <text x="722" y="352" font-size="11" font-weight="700" fill="#1b1b1f">Blast radius</text>
+    <text x="722" y="370" font-size="11" fill="#d13438">Flow (contained)</text>
+    <text x="722" y="404" font-size="11" font-weight="700" fill="#1b1b1f">Onboarding example</text>
+    <text x="722" y="422" font-size="11" fill="#42424c">Runs unattended;</text>
+    <text x="722" y="437" font-size="11" fill="#42424c">escalates only anomalies.</text>
+  </g>
+  <!-- L5 -->
+  <g>
+    <rect x="880" y="152" width="160" height="440" rx="10" fill="#f5f7fb" stroke="#d9deea"/>
+    <rect x="880" y="152" width="160" height="52" rx="10" fill="#12306e"/>
+    <rect x="880" y="188" width="160" height="16" fill="#12306e"/>
+    <text x="892" y="178" font-size="16" font-weight="700" fill="#ffffff">L5 · Full</text>
+    <text x="892" y="198" font-size="11" fill="#eaf0ff">Unattended, self-heals</text>
+    <text x="892" y="230" font-size="11" font-weight="700" fill="#1b1b1f">Human role</text>
+    <text x="892" y="248" font-size="11" fill="#42424c">Governs policy only</text>
+    <text x="892" y="282" font-size="11" font-weight="700" fill="#1b1b1f">Controls required</text>
+    <text x="892" y="300" font-size="11" fill="#42424c">L4 + RL learning loop;</text>
+    <text x="892" y="315" font-size="11" fill="#42424c">continuous eval; policy</text>
+    <text x="892" y="330" font-size="11" fill="#42424c">gov.; self-heal; isolation</text>
+    <text x="892" y="352" font-size="11" font-weight="700" fill="#1b1b1f">Blast radius</text>
+    <text x="892" y="370" font-size="11" fill="#d13438">Multi-flow (isolated)</text>
+    <text x="892" y="404" font-size="11" font-weight="700" fill="#1b1b1f">Onboarding example</text>
+    <text x="892" y="422" font-size="11" fill="#42424c">Provisions fleets;</text>
+    <text x="892" y="437" font-size="11" fill="#42424c">self-heals, reports.</text>
+  </g>
+
+  <text x="30" y="612" font-size="11" fill="#8a8a96">Anti-pattern: jumping autonomy levels without the matching controls ("autonomy theater").</text>
+</svg>

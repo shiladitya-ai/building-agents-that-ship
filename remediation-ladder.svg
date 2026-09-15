@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="720" viewBox="0 0 1060 720" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4f6ea8"/>
+    </marker>
+  </defs>
+  <rect width="1060" height="720" fill="#ffffff"/>
+  <text x="34" y="44" font-size="24" font-weight="700" fill="#1b1b1f">Remediation Autonomy Ladder</text>
+  <text x="34" y="70" font-size="14" fill="#5a5a66">How much recovery an agent may perform without a human &#8212; earned per failure class, never granted in bulk.</text>
+
+  <!-- Governing rule banner -->
+  <rect x="34" y="86" width="992" height="44" rx="10" fill="#fff4ec" stroke="#f2c9a8"/>
+  <text x="530" y="114" font-size="14.5" font-weight="700" fill="#8a3b00" text-anchor="middle">Rule: remediation autonomy must never exceed diagnostic + verification maturity for that failure class.</text>
+
+  <!-- Ladder rungs (bottom = L0, top = L4) rising to the right -->
+  <!-- L0 -->
+  <rect x="34" y="560" width="640" height="58" rx="9" fill="#eef2f8" stroke="#c7d3e6"/>
+  <circle cx="70" cy="589" r="18" fill="#8a94a6"/>
+  <text x="70" y="595" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">0</text>
+  <text x="102" y="583" font-size="15" font-weight="700" fill="#2b3242">Alert only</text>
+  <text x="102" y="605" font-size="12" fill="#4a5364">Detect &#38; page a human, with a suggested remediation attached. Start here for any new failure class.</text>
+
+  <!-- L1 -->
+  <rect x="94" y="486" width="640" height="58" rx="9" fill="#eaf1ff" stroke="#b9cdf2"/>
+  <circle cx="130" cy="515" r="18" fill="#3f74c8"/>
+  <text x="130" y="521" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="162" y="509" font-size="15" font-weight="700" fill="#12306e">Auto-retry the safe stuff</text>
+  <text x="162" y="531" font-size="12" fill="#33445f">Retry idempotent ops on transient faults &#8212; backoff + cap. Kills most 3 a.m. pages on its own.</text>
+
+  <!-- L2 -->
+  <rect x="154" y="412" width="640" height="58" rx="9" fill="#eaf1ff" stroke="#b9cdf2"/>
+  <circle cx="190" cy="441" r="18" fill="#2f5fb0"/>
+  <text x="190" y="447" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="222" y="435" font-size="15" font-weight="700" fill="#12306e">Propose &#38; approve</text>
+  <text x="222" y="457" font-size="12" fill="#33445f">Agent proposes a fix; a human approves. Full audit trail. Default for state-mutating ops.</text>
+
+  <!-- L3 -->
+  <rect x="214" y="338" width="640" height="58" rx="9" fill="#eefaf1" stroke="#a9dcbb"/>
+  <circle cx="250" cy="367" r="18" fill="#2f8f57"/>
+  <text x="250" y="373" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="282" y="361" font-size="15" font-weight="700" fill="#14562c">Bounded autonomous remediation</text>
+  <text x="282" y="383" font-size="12" fill="#245c38">Execute within a hard blast radius, then verify before continuing.</text>
+
+  <!-- L4 -->
+  <rect x="274" y="264" width="640" height="58" rx="9" fill="#eefaf1" stroke="#a9dcbb"/>
+  <circle cx="310" cy="293" r="18" fill="#14562c"/>
+  <text x="310" y="299" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="342" y="287" font-size="15" font-weight="700" fill="#14562c">Autonomous + continuous learning</text>
+  <text x="342" y="309" font-size="12" fill="#245c38">Heal, verify, feed the outcome back into policy.</text>
+
+  <!-- rising arrow along the ladder -->
+  <path d="M56,556 L296,262" fill="none" stroke="#4f6ea8" stroke-width="2.5" stroke-dasharray="6,5" marker-end="url(#arrow)"/>
+  <text x="120" y="360" font-size="12.5" font-style="italic" fill="#4f6ea8" transform="rotate(-51 120 360)">more autonomy</text>
+
+  <!-- Four gates panel (right) -->
+  <rect x="748" y="150" width="278" height="330" rx="12" fill="#f7f9fc" stroke="#d7e0ee"/>
+  <text x="768" y="180" font-size="15" font-weight="700" fill="#12306e">Four gates to climb a rung</text>
+  <text x="768" y="200" font-size="12" fill="#5a5a66">Pass all four for a failure class before</text>
+  <text x="768" y="216" font-size="12" fill="#5a5a66">you grant it more autonomy.</text>
+
+  <circle cx="778" cy="244" r="6" fill="#3f74c8"/>
+  <text x="794" y="249" font-size="13" font-weight="700" fill="#2b3242">Detect it precisely</text>
+  <text x="794" y="266" font-size="11.5" fill="#4a5364">a specific signal, not just a crash</text>
+
+  <circle cx="778" cy="294" r="6" fill="#3f74c8"/>
+  <text x="794" y="299" font-size="13" font-weight="700" fill="#2b3242">Diagnose it correctly</text>
+  <text x="794" y="316" font-size="11.5" fill="#4a5364">transient / systematic / semantic</text>
+
+  <circle cx="778" cy="344" r="6" fill="#2f8f57"/>
+  <text x="794" y="349" font-size="13" font-weight="700" fill="#2b3242">Verify every fix</text>
+  <text x="794" y="366" font-size="11.5" fill="#4a5364">post-condition + eval + guardrail</text>
+
+  <circle cx="778" cy="394" r="6" fill="#8a3b00"/>
+  <text x="794" y="399" font-size="13" font-weight="700" fill="#2b3242">Bound the blast radius</text>
+  <text x="794" y="416" font-size="11.5" fill="#4a5364">isolate what a wrong fix can touch</text>
+
+  <rect x="768" y="432" width="240" height="34" rx="8" fill="#fff4ec" stroke="#f2c9a8"/>
+  <text x="888" y="454" font-size="11.5" font-weight="700" fill="#8a3b00" text-anchor="middle">Healing has a budget &#8212; then fail loud.</text>
+
+  <text x="34" y="656" font-size="12.5" fill="#5a5a66">Most production agents should live at Levels 1&#8211;2 far longer than ambition wants; climb to 3 only for well-understood, high-volume failure classes.</text>
+  <text x="34" y="680" font-size="12.5" fill="#5a5a66">A circuit breaker sits across the whole ladder: when recovery keeps failing, stop healing and escalate &#8212; a systematic fault is a signal, not something to retry.</text>
+  <text x="34" y="704" font-size="11.5" font-style="italic" fill="#8a8a96">Building Agents That Ship &#183; Part 8 &#8212; Self-Healing Systems</text>
+</svg>

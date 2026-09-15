@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root{
+    --navy:#0B1F3A; --navy2:#12305C; --accent:#4EA8DE; --accent2:#2E86C1;
+    --warm:#E8833A; --green:#3FB27F; --muted:#9FB3CE; --line:#26456F;
+  }
+  html,body{ font-family:Arial,Helvetica,sans-serif; color:#EAF1FB; }
+  .slide{
+    position:relative; width:1080px; height:1350px; overflow:hidden;
+    background:linear-gradient(160deg,#0B1F3A 0%, #12305C 60%, #0E2647 100%);
+    padding:96px 92px 120px; display:flex; flex-direction:column;
+    page-break-after:always; -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .slide:last-child{ page-break-after:auto; }
+  .kicker{ font-size:24px; letter-spacing:3px; text-transform:uppercase; color:var(--accent);
+    font-weight:700; margin-bottom:26px; }
+  h1{ font-family:Georgia,'Times New Roman',serif; font-weight:700; line-height:1.06; }
+  .cover h1{ font-size:86px; }
+  h2{ font-family:Georgia,serif; font-size:60px; line-height:1.08; font-weight:700; margin-bottom:34px; }
+  p{ font-size:34px; line-height:1.5; color:#DCE7F6; }
+  .lead{ font-size:40px; line-height:1.42; color:#F2F7FE; }
+  .big{ font-size:40px; }
+  .muted{ color:var(--muted); }
+  .spacer{ flex:1; }
+  .footer{ position:absolute; left:92px; right:92px; bottom:56px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:24px; color:var(--muted); border-top:1px solid var(--line); padding-top:22px; }
+  .footer b{ color:#CFE0F5; font-weight:700; }
+  ul{ list-style:none; }
+  li{ font-size:34px; line-height:1.3; margin-bottom:22px; padding-left:52px; position:relative; color:#E7F0FB; }
+  li::before{ content:""; position:absolute; left:0; top:13px; width:22px; height:22px;
+    border-radius:6px; background:var(--accent); }
+  li.warm::before{ background:var(--warm); }
+  li.green::before{ background:var(--green); }
+  li b{ color:#FFFFFF; }
+  .card{ background:rgba(255,255,255,.05); border:1px solid var(--line); border-radius:22px; padding:40px 44px; }
+  .accentbar{ width:120px; height:10px; background:var(--accent); border-radius:8px; margin-bottom:40px; }
+  .warmbar{ background:var(--warm); }
+  .highlight{ color:var(--warm); }
+  .swipe{ position:absolute; right:92px; bottom:120px; font-size:26px; color:var(--accent);
+    font-weight:700; letter-spacing:1px; }
+  .swipe::after{ content:" \2192"; }
+  .logline{ font-family:"Consolas","Courier New",monospace; font-size:30px; color:#F2B48A;
+    background:rgba(0,0,0,.28); border:1px solid var(--line); border-radius:14px; padding:26px 30px; line-height:1.5; }
+  .ladder{ display:flex; flex-direction:column; gap:16px; margin-top:8px; }
+  .rung{ display:flex; align-items:center; gap:22px; background:rgba(255,255,255,.05);
+    border:1px solid var(--line); border-radius:14px; padding:22px 28px; }
+  .rung .n{ font-family:Georgia,serif; font-size:30px; font-weight:700; color:#0B1F3A;
+    background:var(--accent); border-radius:10px; min-width:52px; height:52px; display:flex;
+    align-items:center; justify-content:center; }
+  .rung.top .n{ background:var(--warm); }
+  .rung .t{ font-size:29px; color:#E7F0FB; }
+  .rung .t b{ color:#fff; }
+  .flow{ font-family:"Consolas","Courier New",monospace; font-size:27px; color:#9CC9F2;
+    background:rgba(0,0,0,.24); border:1px solid var(--line); border-radius:14px; padding:28px 30px;
+    line-height:1.7; }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide cover">
+  <div class="kicker">Building Agents That Ship &middot; Part 7</div>
+  <div class="accentbar warmbar"></div>
+  <h1>The prompt was <span class="highlight">five pages long.</span></h1>
+  <div class="spacer"></div>
+  <p class="lead">Learning from production. Why agents that only tune prompts plateau &mdash; and how to make one that actually gets better.</p>
+  <div class="swipe">Swipe</div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 1 / 8</span></div>
+</section>
+
+<!-- 2 THE STORY -->
+<section class="slide">
+  <div class="kicker">Six months of &ldquo;just add a rule&rdquo;</div>
+  <h2>Whack-a-mole with a text file.</h2>
+  <div class="logline">edge case &rarr; add a rule<br>wrong call &rarr; add an instruction<br>tone complaint &rarr; add a paragraph</div>
+  <div class="spacer"></div>
+  <p class="big muted">Five pages of sediment. And it had <span class="highlight">stopped helping</span> &mdash; every fix for one case quietly broke another.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 2 / 8</span></div>
+</section>
+
+<!-- 3 THE REFRAME -->
+<section class="slide">
+  <div class="kicker">The reframe</div>
+  <div class="accentbar"></div>
+  <h2>Editing a prompt IS machine learning &mdash; done by hand.</h2>
+  <p class="lead">You observe an error, estimate a correction, nudge the system. Gradient descent with a <b style="color:#fff">human as the optimizer</b> and a text file as the weights.</p>
+  <div class="spacer"></div>
+  <p class="big muted">It works early. Then it plateaus &mdash; prose doesn&rsquo;t compose, and you tune from <span class="highlight">memory, not data.</span></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 3 / 8</span></div>
+</section>
+
+<!-- 4 WASTED SIGNAL -->
+<section class="slide">
+  <div class="kicker">Already flowing past you</div>
+  <h2>The signal you&rsquo;re throwing away.</h2>
+  <ul>
+    <li><b>Traces</b> &mdash; what it saw, decided, did</li>
+    <li class="green"><b>Human edits &amp; overrides</b> &mdash; the richest label there is: <i>&ldquo;this, not that&rdquo;</i></li>
+    <li><b>Eval outcomes &amp; guardrail hits</b></li>
+    <li><b>Task success &amp; customer outcomes</b></li>
+  </ul>
+  <p class="big muted">Most teams drop all of it on the floor.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 4 / 8</span></div>
+</section>
+
+<!-- 5 THE LADDER -->
+<section class="slide">
+  <div class="kicker">Climb only as high as you&rsquo;ve earned</div>
+  <h2>The ladder.</h2>
+  <div class="ladder">
+    <div class="rung"><div class="n">1</div><div class="t"><b>Prompt / context edits</b> &mdash; where the plateau lives</div></div>
+    <div class="rung"><div class="n">2</div><div class="t"><b>Learn into memory</b> &mdash; store &amp; retrieve past corrections</div></div>
+    <div class="rung"><div class="n">3</div><div class="t"><b>Reward modeling</b> &mdash; RLHF / RLAIF / rubric rewards</div></div>
+    <div class="rung top"><div class="n">4</div><div class="t"><b>Preference tuning</b> &mdash; DPO / offline RL on logged traces</div></div>
+  </div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 5 / 8</span></div>
+</section>
+
+<!-- 6 CLOSE THE LOOP -->
+<section class="slide">
+  <div class="kicker">The product is the loop</div>
+  <h2>Close it &mdash; don&rsquo;t train once.</h2>
+  <div class="flow">
+    production traces<br>
+    &rarr; eval labels<br>
+    &rarr; reward signal<br>
+    &rarr; policy update<br>
+    &rarr; offline gate + canary<br>
+    &rarr; promote &rarr; <span style="color:#8FE0B4">repeat</span>
+  </div>
+  <div class="spacer"></div>
+  <p class="big muted">The loop, not any single training run, is the <b style="color:#CFE0F5">product.</b></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 6 / 8</span></div>
+</section>
+
+<!-- 7 REWARD HACKING -->
+<section class="slide">
+  <div class="kicker">The danger</div>
+  <div class="accentbar warmbar"></div>
+  <h2>An agent optimizes the <span class="highlight">reward</span> &mdash; not your intent.</h2>
+  <p class="lead" style="margin-bottom:30px;">Give it a proxy and it finds the gap. With language it&rsquo;s slippery: it learns to <b style="color:#fff">sound</b> like it met the rubric without doing the work.</p>
+  <div class="card">
+    <p class="big">So: <b>humans own the reward definition.</b> Automate the labeling, never the decision about what &ldquo;good&rdquo; means. Gate every promotion on independent eval.</p>
+  </div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 7 / 8</span></div>
+</section>
+
+<!-- 8 CTA -->
+<section class="slide cta">
+  <div class="kicker">Take this with you</div>
+  <div class="accentbar warmbar"></div>
+  <h2>The learning-from-production loop &mdash; and a readiness checklist.</h2>
+  <div class="card">
+    <p class="big">Capturing signal? Trustworthy eval? Cheap rungs exhausted? Real volume? Humans own the reward? Promotion gated? Watching for reward hacking?</p>
+  </div>
+  <div class="spacer"></div>
+  <p class="lead">Full post + loop diagram + checklist &mdash; link in the comments.<br><span class="muted">Parts 2&ndash;4 make it work; this is how it gets better. Next: Part 8 &mdash; Self-Healing Systems.</span></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 8 / 8</span></div>
+</section>
+
+</body>
+</html>

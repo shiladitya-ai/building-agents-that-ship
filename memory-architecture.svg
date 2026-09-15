@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="700" viewBox="0 0 1060 700" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f6fd0"/>
+    </marker>
+    <marker id="arwg" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f8f57"/>
+    </marker>
+    <marker id="arwo" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c8722a"/>
+    </marker>
+  </defs>
+  <rect width="1060" height="700" fill="#ffffff"/>
+  <text x="30" y="40" font-size="25" font-weight="700" fill="#1b1b1f">Agent Memory Architecture — Tiered Memory, Retrieval &amp; Reflection</text>
+  <text x="30" y="66" font-size="14" fill="#5a5a66">Treat the context window as working memory, not storage. Retrieve, don't retain (archetype: long-running customer engagement).</text>
+
+  <!-- OS analogy strip -->
+  <rect x="30" y="88" width="1000" height="30" rx="8" fill="#f5f7fb" stroke="#dfe6f2"/>
+  <text x="530" y="108" font-size="13" font-weight="600" fill="#3a4a63" text-anchor="middle">The OS analogy:  context window = RAM  ·  external store = disk  ·  the agent pages information between them</text>
+
+  <!-- LEFT: Agent + Working memory -->
+  <rect x="30" y="140" width="360" height="470" rx="12" fill="#eef4ff" stroke="#b9cdf2"/>
+  <text x="210" y="170" font-size="17" font-weight="700" fill="#12306e" text-anchor="middle">Agent Core</text>
+
+  <!-- Working memory box -->
+  <rect x="55" y="192" width="310" height="150" rx="10" fill="#ffffff" stroke="#7ea3e0" stroke-width="1.5"/>
+  <text x="210" y="216" font-size="15" font-weight="700" fill="#1b3a72" text-anchor="middle">Working Memory</text>
+  <text x="210" y="236" font-size="12" fill="#5a5a66" text-anchor="middle">the live context window — scarce &amp; volatile</text>
+  <line x1="72" y1="248" x2="348" y2="248" stroke="#dfe6f2"/>
+  <text x="72" y="272" font-size="12" fill="#33445f">• Holds only what's needed for THIS step</text>
+  <text x="72" y="294" font-size="12" fill="#33445f">• Curated per step — not accumulated</text>
+  <text x="72" y="316" font-size="12" fill="#33445f">• Expensive; degrades if overstuffed</text>
+
+  <!-- Step loop box -->
+  <rect x="55" y="362" width="310" height="120" rx="10" fill="#ffffff" stroke="#b9cdf2"/>
+  <text x="210" y="386" font-size="14" font-weight="700" fill="#1b3a72" text-anchor="middle">Reason → Act loop</text>
+  <text x="210" y="410" font-size="12" fill="#33445f" text-anchor="middle">each step: assemble working set,</text>
+  <text x="210" y="428" font-size="12" fill="#33445f" text-anchor="middle">plan, call tools, observe results</text>
+  <text x="210" y="454" font-size="11.5" fill="#8a5a1f" text-anchor="middle">horizon grows → per-step decay compounds</text>
+  <text x="210" y="470" font-size="11.5" fill="#8a5a1f" text-anchor="middle">(success ≈ r^H) — so keep the set small</text>
+
+  <!-- protected facts callout -->
+  <rect x="55" y="500" width="310" height="88" rx="10" fill="#fff6ec" stroke="#e6c69a"/>
+  <text x="210" y="524" font-size="13" font-weight="700" fill="#8a5a1f" text-anchor="middle">Pinned constraints</text>
+  <text x="210" y="546" font-size="11.5" fill="#6b5426" text-anchor="middle">high-importance facts are protected</text>
+  <text x="210" y="563" font-size="11.5" fill="#6b5426" text-anchor="middle">from eviction — a hard rule must</text>
+  <text x="210" y="580" font-size="11.5" fill="#6b5426" text-anchor="middle">never silently scroll away</text>
+
+  <!-- RIGHT: External store -->
+  <rect x="640" y="140" width="390" height="470" rx="12" fill="#eefaf1" stroke="#a9dcbb"/>
+  <text x="835" y="170" font-size="17" font-weight="700" fill="#14562c" text-anchor="middle">External Memory Store (durable)</text>
+
+  <!-- Episodic -->
+  <rect x="665" y="192" width="340" height="118" rx="10" fill="#ffffff" stroke="#7cc79a"/>
+  <text x="685" y="216" font-size="15" font-weight="700" fill="#14562c">Episodic memory</text>
+  <text x="685" y="238" font-size="12" fill="#33445f">What happened — append-only log of</text>
+  <text x="685" y="256" font-size="12" fill="#33445f">interactions, actions, and results.</text>
+  <text x="685" y="280" font-size="11.5" fill="#5a5a66">Searchable: "what did we decide about the</text>
+  <text x="685" y="296" font-size="11.5" fill="#5a5a66">finance group?"</text>
+
+  <!-- Semantic -->
+  <rect x="665" y="326" width="340" height="118" rx="10" fill="#ffffff" stroke="#7cc79a"/>
+  <text x="685" y="350" font-size="15" font-weight="700" fill="#14562c">Semantic memory</text>
+  <text x="685" y="372" font-size="12" fill="#33445f">Durable, distilled facts, decisions &amp;</text>
+  <text x="685" y="390" font-size="12" fill="#33445f">constraints — not the raw transcript.</text>
+  <text x="685" y="416" font-size="11.5" fill="#1b7a45" font-weight="600">"prod frozen until the 30th" · "finance out of scope"</text>
+  <text x="685" y="432" font-size="11.5" fill="#5a5a66">the tier where the forgotten constraint should live</text>
+
+  <!-- Procedural -->
+  <rect x="665" y="460" width="340" height="80" rx="10" fill="#ffffff" stroke="#cfe6d8" stroke-dasharray="4 3"/>
+  <text x="685" y="484" font-size="15" font-weight="700" fill="#3c6b4f">Procedural memory <tspan font-size="11" font-weight="400" fill="#8a9a8f">(optional)</tspan></text>
+  <text x="685" y="506" font-size="12" fill="#33445f">Learned routines &amp; skills reused across</text>
+  <text x="685" y="524" font-size="12" fill="#33445f">engagements.</text>
+
+  <!-- Retrieve arrow: store -> working -->
+  <path d="M660,251 C540,251 500,262 372,268" fill="none" stroke="#2f6fd0" stroke-width="2.5" marker-end="url(#arw)"/>
+  <text x="516" y="238" font-size="13" font-weight="700" fill="#2f6fd0" text-anchor="middle">Retrieve →</text>
+  <text x="516" y="256" font-size="11" fill="#3a4a63" text-anchor="middle">score: relevance +</text>
+  <text x="516" y="271" font-size="11" fill="#3a4a63" text-anchor="middle">recency + importance</text>
+
+  <!-- Page-out / evict arrow: working -> store -->
+  <path d="M372,332 C500,346 545,352 660,358" fill="none" stroke="#c8722a" stroke-width="2.5" marker-end="url(#arwo)"/>
+  <text x="516" y="360" font-size="13" font-weight="700" fill="#c8722a" text-anchor="middle">← Persist / evict</text>
+  <text x="516" y="378" font-size="11" fill="#6b5426" text-anchor="middle">write new episodes,</text>
+  <text x="516" y="393" font-size="11" fill="#6b5426" text-anchor="middle">page out cold context</text>
+
+  <!-- Reflection arrow: episodic -> semantic (within store) -->
+  <path d="M835,310 L835,322" fill="none" stroke="#2f8f57" stroke-width="2.5" marker-end="url(#arwg)"/>
+  <rect x="762" y="300" width="146" height="0" />
+  <text x="1010" y="300" font-size="0"> </text>
+
+  <!-- Reflection callout on right edge -->
+  <path d="M1005,251 C1035,270 1035,300 1005,320" fill="none" stroke="#2f8f57" stroke-width="2.5" marker-end="url(#arwg)"/>
+  <text x="960" y="250" font-size="12.5" font-weight="700" fill="#1b7a45" text-anchor="middle">Reflection</text>
+
+  <!-- Bottom reflection explainer -->
+  <rect x="640" y="628" width="390" height="52" rx="8" fill="#f0f8f3" stroke="#bfe2cc"/>
+  <text x="835" y="650" font-size="12" font-weight="600" fill="#1b7a45" text-anchor="middle">Reflection = periodically compress episodes into durable facts</text>
+  <text x="835" y="668" font-size="11.5" fill="#3c6b4f" text-anchor="middle">"we talked for an hour" → "prod is frozen until the 30th"</text>
+
+  <!-- Left bottom principle -->
+  <rect x="30" y="628" width="360" height="52" rx="8" fill="#eef4ff" stroke="#c6d6f2"/>
+  <text x="210" y="650" font-size="13" font-weight="700" fill="#12306e" text-anchor="middle">Retrieve, don't retain.</text>
+  <text x="210" y="668" font-size="11.5" fill="#3a4a63" text-anchor="middle">Long-horizon agents fail because they forget — not because they're dumb.</text>
+
+  <!-- center vertical guide labels -->
+  <text x="516" y="150" font-size="12" font-weight="600" fill="#8a94a6" text-anchor="middle">paging</text>
+</svg>

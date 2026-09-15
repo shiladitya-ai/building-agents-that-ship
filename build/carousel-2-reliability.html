@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root{
+    --navy:#0B1F3A; --navy2:#12305C; --ink:#0E1726;
+    --paper:#F7F5F0; --accent:#4EA8DE; --accent2:#2E86C1;
+    --warm:#E8833A; --green:#3FB27F; --muted:#9FB3CE; --line:#26456F;
+  }
+  html,body{ font-family:Arial,Helvetica,sans-serif; color:#EAF1FB; }
+  .slide{
+    position:relative; width:1080px; height:1350px; overflow:hidden;
+    background:linear-gradient(160deg,#0B1F3A 0%, #12305C 60%, #0E2647 100%);
+    padding:96px 92px 120px; display:flex; flex-direction:column;
+    page-break-after:always; -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .slide:last-child{ page-break-after:auto; }
+  .kicker{ font-size:24px; letter-spacing:3px; text-transform:uppercase; color:var(--accent);
+    font-weight:700; margin-bottom:26px; }
+  h1{ font-family:Georgia,'Times New Roman',serif; font-weight:700; line-height:1.06; }
+  .cover h1{ font-size:96px; }
+  h2{ font-family:Georgia,serif; font-size:64px; line-height:1.08; font-weight:700; margin-bottom:34px; }
+  p{ font-size:34px; line-height:1.5; color:#DCE7F6; }
+  .lead{ font-size:40px; line-height:1.42; color:#F2F7FE; }
+  .big{ font-size:40px; }
+  .muted{ color:var(--muted); }
+  .spacer{ flex:1; }
+  .footer{ position:absolute; left:92px; right:92px; bottom:56px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:24px; color:var(--muted); border-top:1px solid var(--line); padding-top:22px; }
+  .footer b{ color:#CFE0F5; font-weight:700; }
+  .num{ font-variant-numeric:tabular-nums; }
+  .chip{ display:inline-block; background:rgba(78,168,222,.16); border:1px solid var(--accent);
+    color:#CDE7FA; font-size:26px; padding:10px 22px; border-radius:999px; margin:0 12px 16px 0; }
+  ul{ list-style:none; }
+  li{ font-size:36px; line-height:1.35; margin-bottom:26px; padding-left:52px; position:relative; color:#E7F0FB; }
+  li::before{ content:""; position:absolute; left:0; top:14px; width:22px; height:22px;
+    border-radius:6px; background:var(--accent); }
+  li.warm::before{ background:var(--warm); }
+  li.green::before{ background:var(--green); }
+  .card{ background:rgba(255,255,255,.05); border:1px solid var(--line); border-radius:22px; padding:40px 44px; }
+  .math{ font-family:Georgia,serif; }
+  .mathrow{ display:flex; align-items:baseline; gap:24px; margin-bottom:30px; }
+  .mathrow .eq{ font-size:58px; font-weight:700; color:#F4F9FF; font-family:Georgia,serif; }
+  .mathrow .res{ font-size:40px; color:var(--warm); font-weight:700; }
+  .mathrow .lbl{ font-size:28px; color:var(--muted); }
+  table{ width:100%; border-collapse:collapse; margin-top:10px; }
+  th,td{ text-align:left; padding:26px 20px; font-size:34px; border-bottom:1px solid var(--line); }
+  th{ color:var(--accent); font-size:26px; text-transform:uppercase; letter-spacing:2px; }
+  td.r,th.r{ text-align:right; font-variant-numeric:tabular-nums; }
+  td b{ color:#FFFFFF; }
+  .accentbar{ width:120px; height:10px; background:var(--accent); border-radius:8px; margin-bottom:40px; }
+  .warmbar{ background:var(--warm); }
+  .hook{ font-family:Georgia,serif; font-size:52px; line-height:1.22; color:#FFFFFF; }
+  .highlight{ color:var(--warm); }
+  .cta h2{ margin-bottom:24px; }
+  .cta .box{ margin-top:20px; }
+  .swipe{ position:absolute; right:92px; bottom:120px; font-size:26px; color:var(--accent);
+    font-weight:700; letter-spacing:1px; }
+  .swipe::after{ content:" \2192"; }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide cover">
+  <div class="kicker">Building Agents That Ship &middot; Part 2</div>
+  <div class="accentbar warmbar"></div>
+  <h1>Your agent just broke a customer&rsquo;s <span class="highlight">tenant.</span><br>Now what?</h1>
+  <div class="spacer"></div>
+  <p class="lead">Reliability &amp; safe failure for production-grade agentic AI &mdash; the difference between a demo and a system you can trust.</p>
+  <div class="swipe">Swipe</div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 1 / 8</span></div>
+</section>
+
+<!-- 2 THE STORY -->
+<section class="slide">
+  <div class="kicker">The 3 a.m. story</div>
+  <h2>Flawless demo.<br>Then step 7.</h2>
+  <p class="lead">The agent ran clean in the demo. On a real tenant it failed at <b>step 7 of 12</b> &mdash; halfway through provisioning.</p>
+  <div class="spacer"></div>
+  <div class="card">
+    <p class="big">Six resources created. No rollback. A <span class="highlight">half-changed world</span> and a support ticket. The model didn&rsquo;t misbehave &mdash; the <b>system around it</b> had no plan for partial failure.</p>
+  </div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 2 / 8</span></div>
+</section>
+
+<!-- 3 THE REFRAME -->
+<section class="slide">
+  <div class="kicker">The reframe</div>
+  <div class="accentbar"></div>
+  <h2>Onboarding is a distributed transaction &mdash; not a chat.</h2>
+  <p class="lead">The moment an agent takes <i>multi-step, stateful action over real APIs</i>, you&rsquo;ve left &ldquo;chatbot&rdquo; territory.</p>
+  <div class="spacer"></div>
+  <p class="big muted">The right mental models come from distributed systems and SRE, not prompt engineering: <b style="color:#CFE0F5">atomicity, compensation, idempotency, checkpoints.</b></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 3 / 8</span></div>
+</section>
+
+<!-- 4 THE MATH -->
+<section class="slide">
+  <div class="kicker">The math nobody demos</div>
+  <h2>Dependent steps compound.</h2>
+  <div class="card math">
+    <div class="mathrow"><span class="eq">0.95<sup>10</sup></span><span class="res">&asymp; 60%</span><span class="lbl">10 steps at 95% each</span></div>
+    <div class="mathrow"><span class="eq">0.99<sup>100</sup></span><span class="res">&asymp; 37%</span><span class="lbl">100 steps at 99% each</span></div>
+  </div>
+  <div class="spacer"></div>
+  <p class="lead">A per-step success rate that looks great in a demo becomes a <span class="highlight">coin-flip</span> across a real workflow. Reliability is a <b>budget</b>, and it&rsquo;s exponential.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 4 / 8</span></div>
+</section>
+
+<!-- 5 RELIABILITY BUDGETING -->
+<section class="slide">
+  <div class="kicker">Reliability budgeting</div>
+  <h2>Work backward from the goal.</h2>
+  <p class="lead" style="margin-bottom:30px;">Pick the end-to-end success you need, then solve for the per-step reliability it demands.</p>
+  <table>
+    <tr><th>Steps</th><th class="r">For 95% end-to-end</th><th class="r">For 99% end-to-end</th></tr>
+    <tr><td><b>5</b></td><td class="r">98.98%</td><td class="r">99.80%</td></tr>
+    <tr><td><b>20</b></td><td class="r">99.74%</td><td class="r">99.95%</td></tr>
+    <tr><td><b>100</b></td><td class="r">99.95%</td><td class="r">99.99%</td></tr>
+  </table>
+  <div class="spacer"></div>
+  <p class="big muted">If a step can&rsquo;t hit its budget, the fix isn&rsquo;t a better prompt &mdash; it&rsquo;s <b style="color:#CFE0F5">fewer steps, or a human gate.</b></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 5 / 8</span></div>
+</section>
+
+<!-- 6 PATTERN CATALOG -->
+<section class="slide">
+  <div class="kicker">The pattern catalog</div>
+  <h2>Five patterns that buy reliability.</h2>
+  <ul>
+    <li><b>Idempotency</b> &mdash; safe to retry; same input, same effect, once.</li>
+    <li><b>Sagas &amp; compensation</b> &mdash; every forward step has an undo.</li>
+    <li><b>Checkpoint &amp; resume</b> &mdash; recover from step 7, not step 1.</li>
+    <li><b>Circuit breakers</b> &mdash; stop the bleeding; contain blast radius.</li>
+    <li class="green"><b>Confidence gating</b> &mdash; escalate to a human when unsure.</li>
+  </ul>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 6 / 8</span></div>
+</section>
+
+<!-- 7 WHEN NOT TO -->
+<section class="slide">
+  <div class="kicker">Engineering honesty</div>
+  <div class="accentbar"></div>
+  <h2>When you <i>don&rsquo;t</i> need all this.</h2>
+  <p class="lead" style="margin-bottom:36px;">Reliability engineering has a cost. Skip it when the stakes genuinely don&rsquo;t warrant it:</p>
+  <ul>
+    <li class="green">Read-only actions &mdash; nothing to roll back.</li>
+    <li class="green">Trivially reversible changes &mdash; cheap to undo.</li>
+    <li class="green">Watched prototypes &mdash; a human is in the loop anyway.</li>
+  </ul>
+  <p class="big muted">Everything else that <b style="color:#CFE0F5">writes to a customer&rsquo;s world</b> earns the full treatment.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 7 / 8</span></div>
+</section>
+
+<!-- 8 CTA -->
+<section class="slide cta">
+  <div class="kicker">Take this with you</div>
+  <div class="accentbar warmbar"></div>
+  <h2>A production-readiness checklist for agentic workflows.</h2>
+  <div class="card box">
+    <p class="big">Can it <b>retry</b> safely? Can it <b>resume</b> from the middle? Can it <b>undo</b>? Does it <b>know when to stop</b> and ask?</p>
+  </div>
+  <div class="spacer"></div>
+  <p class="lead">Full post + reliability checklist &mdash; link in the comments.<br><span class="muted">Follow for Part 3: The Evaluation Gap &mdash; shipping judgment you can measure.</span></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 8 / 8</span></div>
+</section>
+
+</body>
+</html>

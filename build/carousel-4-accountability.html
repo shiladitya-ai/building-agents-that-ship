@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root{
+    --navy:#0B1F3A; --navy2:#12305C; --ink:#0E1726;
+    --paper:#F7F5F0; --accent:#4EA8DE; --accent2:#2E86C1;
+    --warm:#E8833A; --green:#3FB27F; --muted:#9FB3CE; --line:#26456F;
+  }
+  html,body{ font-family:Arial,Helvetica,sans-serif; color:#EAF1FB; }
+  .slide{
+    position:relative; width:1080px; height:1350px; overflow:hidden;
+    background:linear-gradient(160deg,#0B1F3A 0%, #12305C 60%, #0E2647 100%);
+    padding:96px 92px 120px; display:flex; flex-direction:column;
+    page-break-after:always; -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .slide:last-child{ page-break-after:auto; }
+  .kicker{ font-size:24px; letter-spacing:3px; text-transform:uppercase; color:var(--accent);
+    font-weight:700; margin-bottom:26px; }
+  h1{ font-family:Georgia,'Times New Roman',serif; font-weight:700; line-height:1.06; }
+  .cover h1{ font-size:88px; }
+  h2{ font-family:Georgia,serif; font-size:62px; line-height:1.08; font-weight:700; margin-bottom:34px; }
+  p{ font-size:34px; line-height:1.5; color:#DCE7F6; }
+  .lead{ font-size:40px; line-height:1.42; color:#F2F7FE; }
+  .big{ font-size:40px; }
+  .muted{ color:var(--muted); }
+  .spacer{ flex:1; }
+  .footer{ position:absolute; left:92px; right:92px; bottom:56px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:24px; color:var(--muted); border-top:1px solid var(--line); padding-top:22px; }
+  .footer b{ color:#CFE0F5; font-weight:700; }
+  ul{ list-style:none; }
+  li{ font-size:36px; line-height:1.32; margin-bottom:24px; padding-left:52px; position:relative; color:#E7F0FB; }
+  li::before{ content:""; position:absolute; left:0; top:14px; width:22px; height:22px;
+    border-radius:6px; background:var(--accent); }
+  li.warm::before{ background:var(--warm); }
+  li.green::before{ background:var(--green); }
+  li b{ color:#FFFFFF; }
+  .card{ background:rgba(255,255,255,.05); border:1px solid var(--line); border-radius:22px; padding:40px 44px; }
+  .accentbar{ width:120px; height:10px; background:var(--accent); border-radius:8px; margin-bottom:40px; }
+  .warmbar{ background:var(--warm); }
+  .highlight{ color:var(--warm); }
+  .swipe{ position:absolute; right:92px; bottom:120px; font-size:26px; color:var(--accent);
+    font-weight:700; letter-spacing:1px; }
+  .swipe::after{ content:" \2192"; }
+  .logline{ font-family:"Consolas","Courier New",monospace; font-size:32px; color:#8FE0B4;
+    background:rgba(0,0,0,.28); border:1px solid var(--line); border-radius:14px; padding:26px 30px; }
+  .pipe{ display:flex; flex-direction:column; gap:16px; margin-top:10px; }
+  .step{ display:flex; align-items:center; gap:22px; }
+  .step .tag{ font-family:Georgia,serif; font-size:32px; font-weight:700; color:#F4F9FF;
+    background:rgba(78,168,222,.14); border:1px solid var(--accent); border-radius:12px;
+    padding:16px 22px; min-width:270px; text-align:center; }
+  .step .desc{ font-size:30px; color:#DCE7F6; }
+  .down{ color:var(--accent); font-size:30px; margin-left:120px; }
+  .x{ color:var(--warm); } .check{ color:var(--green); }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide cover">
+  <div class="kicker">Building Agents That Ship &middot; Part 4</div>
+  <div class="accentbar warmbar"></div>
+  <h1>Who told the agent it <span class="highlight">could do that?</span></h1>
+  <div class="spacer"></div>
+  <p class="lead">Accountability &amp; auditability &mdash; making every agent action attributable, replayable, and something you can actually defend.</p>
+  <div class="swipe">Swipe</div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 1 / 8</span></div>
+</section>
+
+<!-- 2 THE STORY -->
+<section class="slide">
+  <div class="kicker">Six weeks later</div>
+  <h2>&ldquo;Why did it remove those licenses on the 14th &mdash; and who signed off?&rdquo;</h2>
+  <p class="lead" style="margin-bottom:32px;">A fair question from the customer&rsquo;s security team. We went to the logs.</p>
+  <div class="logline">&gt; Task completed successfully. 42 actions taken.</div>
+  <div class="spacer"></div>
+  <p class="big muted">We knew <b style="color:#CFE0F5">that</b> it acted. We couldn&rsquo;t reconstruct <span class="highlight">why</span>, what it saw, or who was accountable.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 2 / 8</span></div>
+</section>
+
+<!-- 3 THE REFRAME -->
+<section class="slide">
+  <div class="kicker">The reframe</div>
+  <div class="accentbar"></div>
+  <h2>The question that ends pilots isn&rsquo;t &ldquo;does it work?&rdquo;</h2>
+  <p class="lead">It&rsquo;s <span class="highlight">&ldquo;can you prove what it did?&rdquo;</span></p>
+  <div class="spacer"></div>
+  <p class="big muted">Autonomy erases the human paper trail. A person clicked the button, their name was on it. When the <b style="color:#CFE0F5">agent</b> clicks it, that trail evaporates &mdash; unless you rebuild it on purpose.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 3 / 8</span></div>
+</section>
+
+<!-- 4 FOUR PROPERTIES -->
+<section class="slide">
+  <div class="kicker">Defensible action</div>
+  <h2>Four properties.</h2>
+  <ul>
+    <li><b>Attributable</b> &mdash; agent + version + plan + the identity that authorized it.</li>
+    <li><b>Replayable</b> &mdash; the exact context it had at decision time. Not a summary.</li>
+    <li><b>Explainable</b> &mdash; the reasoning, in a form a human can review.</li>
+    <li class="warm"><b>Owned</b> &mdash; a named team is accountable. The model is never the owner.</li>
+  </ul>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 4 / 8</span></div>
+</section>
+
+<!-- 5 THE MOVE -->
+<section class="slide">
+  <div class="kicker">The move</div>
+  <h2>Log <span class="highlight">decisions,</span> not just outcomes.</h2>
+  <p class="lead" style="margin-bottom:30px;">Most systems log the effect: <i>&ldquo;license removed, user 4412.&rdquo;</i> That&rsquo;s necessary and completely insufficient.</p>
+  <div class="card">
+    <p class="big">The old, proven instinct: <b>event sourcing.</b> Don&rsquo;t store only the final state &mdash; store the sequence of decisions that produced it. Agents need the same discipline, one layer up.</p>
+  </div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 5 / 8</span></div>
+</section>
+
+<!-- 6 TRACE SCHEMA -->
+<section class="slide">
+  <div class="kicker">Per consequential action</div>
+  <h2>Capture the whole decision.</h2>
+  <div class="pipe">
+    <div class="step"><span class="tag">Trigger</span><span class="desc">what initiated this step</span></div>
+    <div class="step"><span class="tag">Context</span><span class="desc">the inputs &amp; tool results it actually had</span></div>
+    <div class="step"><span class="tag">Intent</span><span class="desc">what it was trying to accomplish</span></div>
+    <div class="step"><span class="tag">Action + Auth</span><span class="desc">the operation + who/what permitted it</span></div>
+    <div class="step"><span class="tag">Result</span><span class="desc">outcome, and any compensation</span></div>
+  </div>
+  <div class="spacer"></div>
+  <p class="big muted">Now &ldquo;why did it do X on the 14th?&rdquo; is a <b style="color:#CFE0F5">query</b>, not a forensics project.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 6 / 8</span></div>
+</section>
+
+<!-- 7 SECURITY -->
+<section class="slide">
+  <div class="kicker">Not just compliance</div>
+  <div class="accentbar"></div>
+  <h2>The audit trail is a <span class="highlight">security control.</span></h2>
+  <p class="lead" style="margin-bottom:32px;">Indirect prompt injection can turn a helpful agent into a confused deputy &mdash; content it reads carries hidden instructions, and it acts with its own privileges.</p>
+  <p class="big muted">When that happens at scale, a decision-level trace is the only thing between you and <b style="color:#CFE0F5">&ldquo;we have no idea what it touched.&rdquo;</b></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 7 / 8</span></div>
+</section>
+
+<!-- 8 CTA -->
+<section class="slide cta">
+  <div class="kicker">Take this with you</div>
+  <div class="accentbar warmbar"></div>
+  <h2>An accountability checklist &mdash; and a trace schema.</h2>
+  <div class="card">
+    <p class="big">Is every action <b>attributable</b>? Can you <b>replay</b> the context? Is the reasoning <b>explainable</b>? Does every agent have a named <b>owner</b>?</p>
+  </div>
+  <div class="spacer"></div>
+  <p class="lead">Full post + checklist + copy-paste trace schema &mdash; link in the comments.<br><span class="muted">Part 2 = reliability. Part 3 = evaluation. Next: Part 5 &mdash; Context &amp; Memory.</span></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 8 / 8</span></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root{
+    --navy:#0B1F3A; --navy2:#12305C; --accent:#4EA8DE; --accent2:#2E86C1;
+    --warm:#E8833A; --green:#3FB27F; --muted:#9FB3CE; --line:#26456F;
+  }
+  html,body{ font-family:Arial,Helvetica,sans-serif; color:#EAF1FB; }
+  .slide{
+    position:relative; width:1080px; height:1350px; overflow:hidden;
+    background:linear-gradient(160deg,#0B1F3A 0%, #12305C 60%, #0E2647 100%);
+    padding:96px 92px 120px; display:flex; flex-direction:column;
+    page-break-after:always; -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .slide:last-child{ page-break-after:auto; }
+  .kicker{ font-size:24px; letter-spacing:3px; text-transform:uppercase; color:var(--accent);
+    font-weight:700; margin-bottom:26px; }
+  h1{ font-family:Georgia,'Times New Roman',serif; font-weight:700; line-height:1.06; }
+  .cover h1{ font-size:86px; }
+  h2{ font-family:Georgia,serif; font-size:60px; line-height:1.08; font-weight:700; margin-bottom:34px; }
+  p{ font-size:34px; line-height:1.5; color:#DCE7F6; }
+  .lead{ font-size:40px; line-height:1.42; color:#F2F7FE; }
+  .big{ font-size:40px; }
+  .muted{ color:var(--muted); }
+  .spacer{ flex:1; }
+  .footer{ position:absolute; left:92px; right:92px; bottom:56px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:24px; color:var(--muted); border-top:1px solid var(--line); padding-top:22px; }
+  .footer b{ color:#CFE0F5; font-weight:700; }
+  ul{ list-style:none; }
+  li{ font-size:35px; line-height:1.3; margin-bottom:24px; padding-left:52px; position:relative; color:#E7F0FB; }
+  li::before{ content:""; position:absolute; left:0; top:14px; width:22px; height:22px;
+    border-radius:6px; background:var(--accent); }
+  li.warm::before{ background:var(--warm); }
+  li.green::before{ background:var(--green); }
+  li b{ color:#FFFFFF; }
+  .card{ background:rgba(255,255,255,.05); border:1px solid var(--line); border-radius:22px; padding:40px 44px; }
+  .accentbar{ width:120px; height:10px; background:var(--accent); border-radius:8px; margin-bottom:40px; }
+  .warmbar{ background:var(--warm); }
+  .highlight{ color:var(--warm); }
+  .swipe{ position:absolute; right:92px; bottom:120px; font-size:26px; color:var(--accent);
+    font-weight:700; letter-spacing:1px; }
+  .swipe::after{ content:" \2192"; }
+  .logline{ font-family:"Consolas","Courier New",monospace; font-size:29px; color:#F2B48A;
+    background:rgba(0,0,0,.28); border:1px solid var(--line); border-radius:14px; padding:26px 30px; line-height:1.5; }
+  .fork{ display:flex; gap:24px; margin-top:14px; }
+  .path{ flex:1; border-radius:18px; padding:32px 30px; border:1px solid var(--line); }
+  .path.no{ background:rgba(63,178,127,.10); border-color:#2f8f57; }
+  .path.yes{ background:rgba(78,168,222,.10); border-color:#2f6fd0; }
+  .path .lbl{ font-family:Georgia,serif; font-size:34px; font-weight:700; margin-bottom:12px; }
+  .path.no .lbl{ color:#8FE0B4; }
+  .path.yes .lbl{ color:#9CC9F2; }
+  .path p{ font-size:27px; color:#DCE7F6; }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide cover">
+  <div class="kicker">Building Agents That Ship &middot; Part 6</div>
+  <div class="accentbar warmbar"></div>
+  <h1>We added more agents. <span class="highlight">It got worse.</span></h1>
+  <div class="spacer"></div>
+  <p class="lead">Multi-agent: help vs. hurt. Why most multi-agent systems are premature &mdash; and the one question that tells you when they&rsquo;re not.</p>
+  <div class="swipe">Swipe</div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 1 / 8</span></div>
+</section>
+
+<!-- 2 THE STORY -->
+<section class="slide">
+  <div class="kicker">The big migration</div>
+  <h2>Four specialists. One incoherent whole.</h2>
+  <p class="lead" style="margin-bottom:26px;">Planner. Mapper. Validator. Executor. Clean separation &mdash; just like microservices.</p>
+  <div class="logline">&gt; mapper changed the schema; planner never saw it<br>&gt; validator checked assumptions the executor had dropped<br>&gt; two agents ran the SAME step</div>
+  <div class="spacer"></div>
+  <p class="big muted">We spent more time reconciling the agents with each other than doing the migration.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 2 / 8</span></div>
+</section>
+
+<!-- 3 WHY SEDUCTIVE -->
+<section class="slide">
+  <div class="kicker">Why the instinct feels right</div>
+  <h2>It borrows credibility it hasn&rsquo;t earned.</h2>
+  <ul>
+    <li><b>The microservices analogy</b> &mdash; we decompose big systems, so decompose big agents.</li>
+    <li><b>&ldquo;Specialists are better&rdquo;</b> &mdash; a tight validation agent beats a generalist.</li>
+    <li><b>The parallelism dream</b> &mdash; five agents must be faster than one.</li>
+  </ul>
+  <div class="spacer"></div>
+  <p class="big muted">All reasonable. All applied to the <span class="highlight">wrong layer.</span></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 3 / 8</span></div>
+</section>
+
+<!-- 4 WHY IT HURTS -->
+<section class="slide">
+  <div class="kicker">The real reason</div>
+  <div class="accentbar"></div>
+  <h2>Microservices pass payloads. Agents must pass <span class="highlight">context.</span></h2>
+  <p class="lead">A schema or API crosses a boundary cleanly. The fuzzy, evolving understanding of <i>what we&rsquo;re doing and why</i> does not.</p>
+  <div class="spacer"></div>
+  <p class="big muted">Every handoff leaks shared understanding. Each agent acts on a partial view &mdash; <b style="color:#CFE0F5">locally sensible, globally wrong.</b></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 4 / 8</span></div>
+</section>
+
+<!-- 5 THE COSTS -->
+<section class="slide">
+  <div class="kicker">The tax you pay</div>
+  <h2>Three costs stack up fast.</h2>
+  <ul>
+    <li class="warm"><b>Compounding errors</b> &mdash; across four agents, mistakes don&rsquo;t add. They multiply.</li>
+    <li class="warm"><b>~15&times; the tokens</b> &mdash; context gets re-sent and re-reasoned at every seam.</li>
+    <li class="warm"><b>Debugging collapses</b> &mdash; the bug lives in the <i>conversation</i>, not any one agent.</li>
+  </ul>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 5 / 8</span></div>
+</section>
+
+<!-- 6 WHEN IT WINS -->
+<section class="slide">
+  <div class="kicker">Not anti-multi-agent</div>
+  <h2>When it wins decisively.</h2>
+  <p class="lead" style="margin-bottom:28px;"><b style="color:#fff">Breadth-first, parallelizable, context-independent</b> work: many subtasks that run at once, don&rsquo;t depend on each other, share no evolving state.</p>
+  <div class="card">
+    <p class="big"><i>&ldquo;Research these 40 companies.&rdquo;</i><br><i>&ldquo;Assess 500 tenants against a fixed checklist.&rdquo;</i></p>
+    <p class="muted" style="margin-top:14px;">Fan out &rarr; run in parallel &rarr; merge. No shared context to fragment.</p>
+  </div>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 6 / 8</span></div>
+</section>
+
+<!-- 7 THE ONE QUESTION -->
+<section class="slide">
+  <div class="kicker">The tell</div>
+  <h2>One question decides it.</h2>
+  <p class="lead" style="margin-bottom:20px;">Do the subtasks need to <span class="highlight">talk to each other</span> while they run?</p>
+  <div class="fork">
+    <div class="path no">
+      <div class="lbl">NO &rarr;</div>
+      <p>Fan them out. Multi-agent wins.</p>
+    </div>
+    <div class="path yes">
+      <div class="lbl">YES &rarr;</div>
+      <p>A coordination problem in a parallelism costume. One agent wins.</p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <p class="big muted">The migration was a loud <b style="color:#F2B48A">YES</b>. That&rsquo;s why it broke.</p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 7 / 8</span></div>
+</section>
+
+<!-- 8 CTA -->
+<section class="slide cta">
+  <div class="kicker">Take this with you</div>
+  <div class="accentbar warmbar"></div>
+  <h2>A &ldquo;should you go multi-agent?&rdquo; decision tree.</h2>
+  <div class="card">
+    <p class="big">Genuinely parallel? Context-independent? Worth the ~15&times; tax? Has a single agent actually hit a wall? Any &ldquo;no&rdquo; &rarr; one agent.</p>
+  </div>
+  <div class="spacer"></div>
+  <p class="lead">Full post + the decision tree &mdash; link in the comments.<br><span class="muted">Start single-threaded. Make the second agent earn it. Next: Part 7 &mdash; Learning from Production.</span></p>
+  <div class="footer"><span><b>Production-Grade Agentic AI</b></span><span>@shilsr &middot; 8 / 8</span></div>
+</section>
+
+</body>
+</html>
