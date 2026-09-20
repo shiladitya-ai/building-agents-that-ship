@@ -1,7 +1,7 @@
 # LinkedIn — Companion Posts for Part 6: Multi-Agent — Help vs. Hurt
 
 > Paste as plain text. First 2 lines are the hook — that's all that shows before "…see more".
-> Pick ONE primary post. Swap `[link to blog]` for your published URL.
+> Pick ONE primary post. The canonical blog link is pre-filled (GitHub Pages).
 
 ---
 
@@ -36,7 +36,7 @@ The tell that decides everything:
 Multi-agent is an optimization, not an architecture. Start single-threaded. Make the second agent earn its place.
 
 Full write-up + a "should you go multi-agent?" decision tree 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-6-multiagent.html
 
 Part 6 of "Building Agents That Ship."
 
@@ -70,7 +70,7 @@ The senior default is the boring one: start with a single agent, one coherent th
 The size of the problem isn't the question. The shape of the work is.
 
 Full breakdown 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-6-multiagent.html
 
 Part 6 of "Building Agents That Ship." When has multi-agent actually paid off for you — and when did it bite?
 
@@ -95,7 +95,7 @@ Do the subtasks need to talk to each other while they run?
 Multi-agent is an optimization, not an architecture. Start single-threaded. Make the second agent earn it.
 
 Full post 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-6-multiagent.html
 
 #AgenticAI #MultiAgent #AIEngineering
 
