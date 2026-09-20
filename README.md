@@ -9,7 +9,7 @@
 
 Every piece follows the same shape: a real (anonymized) enterprise failure → a universal engineering principle → a reusable "gift" (checklist, rubric, pattern catalog, or diagram). All scenarios are generalized industry archetypes — **no customer names, tenant data, or internal metrics.** The maturity model is inspired by, and does not reproduce, SAE J3016 and CMMI.
 
-*By **Shiladitya Srivastava** — principal engineer / technical architect. Views expressed here are the author's own.*
+*By **Shiladitya Srivastava** — technical architect. Views expressed here are the author's own.*
 
 ---
 
@@ -18,7 +18,7 @@ Every piece follows the same shape: a real (anonymized) enterprise failure → a
 | # | Piece | Thesis | Read online | Source & assets |
 |---|-------|--------|-------------|-----------------|
 | **1** | **Production-Grade Agentic AI** (Flagship) | Autonomy without recoverability, eval & accountability is a liability | *(whitepaper — see below)* | [Whitepaper (PDF)](Production-Grade-Agentic-AI-Whitepaper.pdf) · [Outline](flagship-outline.md) |
-| **2** | **Reliability & Safe Failure** | State-mutating agents need transactional guarantees LLMs don't give you | 📖 [Read](https://shiladitya-ai.github.io/building-agents-that-ship/blog-2-reliability.html) | [Markdown](blog-2-reliability.md) · [LinkedIn](linkedin-2-reliability.md) · [Carousel](carousel-2-reliability.pdf) |
+| **2** | **Reliability & Safe Failure** | State-mutating agents need transactional guarantees LLMs don't give you | �� [Read](https://shiladitya-ai.github.io/building-agents-that-ship/blog-2-reliability.html) | [Markdown](blog-2-reliability.md) · [LinkedIn](linkedin-2-reliability.md) · [Carousel](carousel-2-reliability.pdf) |
 | **3** | **The Evaluation Gap** | You can't ship judgment you can't measure | 📖 [Read](https://shiladitya-ai.github.io/building-agents-that-ship/blog-3-evaluation.html) | [Markdown](blog-3-evaluation.md) · [LinkedIn](linkedin-3-evaluation.md) · [Carousel](carousel-3-evaluation.pdf) |
 | **4** | **Accountability & Auditability** | Every agent action must be attributable and replayable | 📖 [Read](https://shiladitya-ai.github.io/building-agents-that-ship/blog-4-accountability.html) | [Markdown](blog-4-accountability.md) · [LinkedIn](linkedin-4-accountability.md) · [Carousel](carousel-4-accountability.pdf) |
 | **5** | **Context & Memory** | Long-horizon agents live or die on state, not prompts | 📖 [Read](https://shiladitya-ai.github.io/building-agents-that-ship/blog-5-memory.html) | [Markdown](blog-5-memory.md) · [LinkedIn](linkedin-5-memory.md) · [Carousel](carousel-5-memory.pdf) · [Diagram](memory-architecture.svg) |
@@ -43,7 +43,7 @@ Every piece follows the same shape: a real (anonymized) enterprise failure → a
 
 ## The signature contribution: the two-axis Agentic Maturity Model
 
-Autonomy and capability are separate questions. The model keeps them separate — and the governing rule is the most important sentence in the series:
+Autonomy and capability are separate questions. The model keeps them separate ��� and the governing rule is the most important sentence in the series:
 
 > **An agent's autonomy (Axis A) must never exceed its weakest capability dimension (Axis B).**
 
@@ -66,7 +66,7 @@ Autonomy and capability are separate questions. The model keeps them separate �
 
 ## Carousels (LinkedIn visual series)
 
-Each installment has a companion 8-slide carousel (1080×1350, 4:5) for LinkedIn document posts. Same arc every time: a real failure → the reframe → the principle → the reusable gift.
+Each installment has a companion 8-slide carousel (1080×1350, 4:5) for LinkedIn document posts. Same arc every time: a real failure → the reframe ��� the principle → the reusable gift.
 
 | Part | Carousel | Preview |
 |---|---|---|
