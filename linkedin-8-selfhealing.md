@@ -1,7 +1,7 @@
 # LinkedIn — Companion Posts for Part 8: Self-Healing Systems
 
 > Paste as plain text. First 2 lines are the hook — that's all that shows before "…see more".
-> Pick ONE primary post. Swap `[link to blog]` for your published URL.
+> Pick ONE primary post. The canonical blog link is pre-filled (GitHub Pages).
 
 ---
 
@@ -32,7 +32,7 @@ And the rule that keeps it safe: remediation autonomy is EARNED, one failure cla
 If recovery lives in a human's pager instead of your system, you don't have an autonomous agent — you have a manual one with extra steps.
 
 Full write-up + the self-healing loop + a remediation-readiness checklist 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-8-selfhealing.html
 
 Part 8 of "Building Agents That Ship."
 
@@ -67,7 +67,7 @@ Most agents should live at 1–2 far longer than ambition wants.
 The governing rule, one more time: an agent's remediation autonomy must never exceed its diagnostic and verification maturity. Autonomy that isn't backed by verification is just an outage with initiative.
 
 Full breakdown 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-8-selfhealing.html
 
 Part 8 of "Building Agents That Ship." What's the dumbest thing that's ever paged you at 3 a.m.?
 
@@ -93,7 +93,7 @@ And don't hand it a blanket "auto-fix" mandate. Remediation autonomy is earned p
 Autonomy without verification is just an outage with initiative.
 
 Full post 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-8-selfhealing.html
 
 #AgenticAI #SRE #Reliability
 
