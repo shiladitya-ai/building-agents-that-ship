@@ -1,7 +1,7 @@
 # LinkedIn — Companion Posts for Part 9 (Finale): Securing the Tool Surface
 
 > Paste as plain text. First 2 lines are the hook — that's all that shows before "…see more".
-> Pick ONE primary post. Swap `[link to blog]` for your published URL.
+> Pick ONE primary post. The canonical blog link is pre-filled (GitHub Pages).
 
 ---
 
@@ -35,7 +35,7 @@ Least privilege doesn't prevent injection. It bounds what an injection can accom
 Your agent's tools aren't features you granted it. They're an attack surface you opened — and every one is reachable by anything the agent reads.
 
 Full write-up + a tool-surface security checklist 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-9-security.html
 
 Part 9 — the FINALE of "Building Agents That Ship." Thank you for reading the series.
 
@@ -69,7 +69,7 @@ And the honesty check: match the paranoia to the blast radius. A read-only agent
 Least privilege everywhere; heavy mediation only where the damage earns it.
 
 Full breakdown + checklist 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-9-security.html
 
 Part 9, the finale of "Building Agents That Ship."
 
@@ -103,7 +103,7 @@ Build in that order. Grant autonomy in that order. Never let ambition outrun the
 That's how you build agents that ship.
 
 The full series — 8 blogs, a flagship whitepaper, diagrams, and carousels 👇
-[link to repo / blog index]
+https://shiladitya-ai.github.io/building-agents-that-ship/
 
 Thank you for reading. Which part hit hardest?
 
