@@ -36,7 +36,7 @@ Reliability isn't a smarter model. It's engineering discipline.
 An agent that can act but can't recover isn't an asset in a high-stakes workflow — it's a liability. And the more autonomy you give it, the bigger the blast radius when it's wrong.
 
 Full write-up (with the reliability budget table + a readiness checklist you can steal) 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-2-reliability.html
 
 This is Part 2 of "Building Agents That Ship."
 
@@ -67,7 +67,7 @@ That last one matters most. If each step is 99% reliable and your workflow is 10
 Autonomy is earned by reliability. Never assumed before it.
 
 I wrote up the full pattern catalog + a readiness checklist here 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-2-reliability.html
 
 Part 2 of "Building Agents That Ship." What's the worst "it worked in the demo" failure you've seen?
 
@@ -88,7 +88,7 @@ It comes from idempotency, sagas, checkpoints, and budgeting your horizon.
 Onboarding a customer is a distributed transaction, not a chat.
 
 Full breakdown 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-2-reliability.html
 
 #AgenticAI #AIEngineering #ProductionAI
 
@@ -110,6 +110,6 @@ Full breakdown 👇
 ### Posting tips
 - Lead with the first two lines; everything after "…see more" is bonus.
 - Post the link as the FIRST comment (not the body) if you want max reach, or in-body if you value clarity — test both.
-- Replace `[link to blog]` with your published URL (blog, GitHub, or Substack).
+- The canonical blog link is pre-filled: https://shiladitya-ai.github.io/building-agents-that-ship/blog-2-reliability.html
 - Best windows for a technical audience: Tue–Thu, 8–10am your readers' time.
 - Reply to every early comment in the first hour — it compounds reach.
