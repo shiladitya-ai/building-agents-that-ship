@@ -1,7 +1,7 @@
 # LinkedIn — Companion Posts for Part 7: Learning from Production (RL)
 
 > Paste as plain text. First 2 lines are the hook — that's all that shows before "…see more".
-> Pick ONE primary post. Swap `[link to blog]` for your published URL.
+> Pick ONE primary post. The canonical blog link is pre-filled (GitHub Pages).
 
 ---
 
@@ -40,7 +40,7 @@ So humans own the reward definition. Promotion is gated by independent eval, not
 An agent that can only improve by editing its prompt has a ceiling. You've probably already hit it.
 
 Full write-up + a learning-from-production loop + readiness checklist 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-7-learning.html
 
 Part 7 of "Building Agents That Ship."
 
@@ -75,7 +75,7 @@ And the thing that makes this different from normal ML — reward hacking. Optim
 Learning from production is the PAYOFF for the boring earlier work: you can't learn from traces you didn't capture, can't reward what you can't measure, can't safely act on what you learned without recoverability.
 
 Full breakdown 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-7-learning.html
 
 Part 7 of "Building Agents That Ship." How long did you ride prompt-tuning before it plateaued?
 
@@ -101,7 +101,7 @@ One warning: reward hacking. An agent optimizes the reward, not your intent. Hum
 An agent that can only improve by editing its prompt has a ceiling.
 
 Full post 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-7-learning.html
 
 #AgenticAI #RLHF #AIEngineering
 
