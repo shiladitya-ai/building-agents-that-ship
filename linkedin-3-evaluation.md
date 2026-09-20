@@ -1,7 +1,7 @@
 # LinkedIn — Companion Posts for Part 3: The Evaluation Gap
 
 > Paste as plain text. First 2 lines are the hook — that's all that shows before "…see more".
-> Pick ONE primary post. Swap `[link to blog]` for your published URL.
+> Pick ONE primary post. The canonical blog link is pre-filled (GitHub Pages).
 
 ---
 
@@ -36,7 +36,7 @@ You cannot ship judgment you cannot measure.
 "It looked right" is not a test.
 
 Full write-up + an evaluation readiness checklist you can steal 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-3-evaluation.html
 
 Part 3 of "Building Agents That Ship."
 
@@ -67,7 +67,7 @@ Evaluation isn't a phase at the end. It's the gate that governs every increase i
 Quality is engineered, not prompted.
 
 Full breakdown 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-3-evaluation.html
 
 Part 3 of "Building Agents That Ship." What's the worst confidently-wrong answer an agent has handed you?
 
@@ -90,7 +90,7 @@ Score the trajectory. Measure consistency. Gate autonomy on it.
 You can't ship judgment you can't measure.
 
 Full post 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-3-evaluation.html
 
 #AgenticAI #AIEngineering #Evaluation
 
