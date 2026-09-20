@@ -1,7 +1,7 @@
 # LinkedIn — Companion Posts for Part 4: Accountability & Auditability
 
 > Paste as plain text. First 2 lines are the hook — that's all that shows before "…see more".
-> Pick ONE primary post. Swap `[link to blog]` for your published URL.
+> Pick ONE primary post. The canonical blog link is pre-filled (GitHub Pages).
 
 ---
 
@@ -37,7 +37,7 @@ Do that, and "why did it do X on the 14th?" becomes a query — not a forensics 
 Audit trails aren't compliance paperwork. In an agent that calls real tools, they're a security control.
 
 Full write-up + an accountability checklist and a trace schema you can steal 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-4-accountability.html
 
 Part 4 of "Building Agents That Ship."
 
@@ -71,7 +71,7 @@ And here's the part teams miss: this is a security control, not just a complianc
 Auditability isn't paperwork. It's the currency you spend to buy autonomy.
 
 Full breakdown 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-4-accountability.html
 
 Part 4 of "Building Agents That Ship." What's the hardest "why did it do that?" question an agent has handed you?
 
@@ -97,7 +97,7 @@ Then "why did it do X?" is a query, not a forensics project.
 If you can't explain what your agent did, you don't own it — you're hoping on its behalf.
 
 Full post 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-4-accountability.html
 
 #AgenticAI #AIEngineering #AIGovernance
 
