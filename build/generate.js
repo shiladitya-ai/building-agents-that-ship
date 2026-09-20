@@ -102,7 +102,7 @@ children.push(new Paragraph({
 children.push(new Paragraph({ spacing: { before: 600 }, alignment: AlignmentType.CENTER,
   children: [new TextRun({ text: "Author: [Your Name]", size: 24 })] }));
 children.push(new Paragraph({ alignment: AlignmentType.CENTER,
-  children: [new TextRun({ text: "Principal Software Engineer & Technical Architect", size: 22, color: "444444" })] }));
+  children: [new TextRun({ text: "Technical Architect", size: 22, color: "444444" })] }));
 children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 200 },
   children: [new TextRun({ text: "September 2026  ·  Version 1.0", size: 22, color: "444444" })] }));
 children.push(new Paragraph({ children: [new PageBreak()] }));
