@@ -1,7 +1,7 @@
 # LinkedIn — Companion Posts for Part 5: Context & Memory
 
 > Paste as plain text. First 2 lines are the hook — that's all that shows before "…see more".
-> Pick ONE primary post. Swap `[link to blog]` for your published URL.
+> Pick ONE primary post. The canonical blog link is pre-filled (GitHub Pages).
 
 ---
 
@@ -40,7 +40,7 @@ The discipline: retrieve, don't retain. And reflect raw history into durable fac
 Long-horizon agents don't fail because they're not smart enough. They fail because they forgot.
 
 Full write-up + a memory design checklist + reference architecture 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-5-memory.html
 
 Part 5 of "Building Agents That Ship."
 
@@ -76,7 +76,7 @@ This is why practitioners call context engineering the #1 job in long-running ag
 The demo tests intelligence. The engagement tests memory.
 
 Full breakdown 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-5-memory.html
 
 Part 5 of "Building Agents That Ship." What's the worst thing an agent has forgotten on you?
 
@@ -104,7 +104,7 @@ Retrieve, don't retain.
 Long-horizon agents don't fail because they're not smart enough. They fail because they forgot.
 
 Full post 👇
-[link to blog]
+https://shiladitya-ai.github.io/building-agents-that-ship/blog-5-memory.html
 
 #AgenticAI #AIEngineering #ContextEngineering
 
