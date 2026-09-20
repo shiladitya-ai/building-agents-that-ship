@@ -17,7 +17,7 @@ Every piece follows the same shape: a real (anonymized) enterprise failure → a
 
 | # | Piece | Thesis | Read online | Source & assets |
 |---|-------|--------|-------------|-----------------|
-| **1** | **Production-Grade Agentic AI** (Flagship) | Autonomy without recoverability, eval & accountability is a liability | *(whitepaper — see below)* | [Whitepaper (PDF)](Production-Grade-Agentic-AI-Whitepaper.pdf) · [editable .docx](Production-Grade-Agentic-AI-Whitepaper.docx) · [Outline](flagship-outline.md) |
+| **1** | **Production-Grade Agentic AI** (Flagship) | Autonomy without recoverability, eval & accountability is a liability | *(whitepaper — see below)* | [Whitepaper (PDF)](Production-Grade-Agentic-AI-Whitepaper.pdf) · [Outline](flagship-outline.md) |
 | **2** | **Reliability & Safe Failure** | State-mutating agents need transactional guarantees LLMs don't give you | 📖 [Read](https://shiladitya-ai.github.io/building-agents-that-ship/blog-2-reliability.html) | [Markdown](blog-2-reliability.md) · [LinkedIn](linkedin-2-reliability.md) · [Carousel](carousel-2-reliability.pdf) |
 | **3** | **The Evaluation Gap** | You can't ship judgment you can't measure | 📖 [Read](https://shiladitya-ai.github.io/building-agents-that-ship/blog-3-evaluation.html) | [Markdown](blog-3-evaluation.md) · [LinkedIn](linkedin-3-evaluation.md) · [Carousel](carousel-3-evaluation.pdf) |
 | **4** | **Accountability & Auditability** | Every agent action must be attributable and replayable | 📖 [Read](https://shiladitya-ai.github.io/building-agents-that-ship/blog-4-accountability.html) | [Markdown](blog-4-accountability.md) · [LinkedIn](linkedin-4-accountability.md) · [Carousel](carousel-4-accountability.pdf) |
@@ -115,7 +115,7 @@ All sources are collected in **[references.md](references.md)**, grouped by them
 
 ## How to read the naming
 
-- **Part 1 is delivered as the whitepaper (PDF for reading, .docx for editing)** — there is no `blog-1`.
+- **Part 1 is delivered as the whitepaper (PDF)** — there is no `blog-1`.
 - **Installments use `blog-N-*` and `linkedin-N-*`** where N is the part number.
 
 ---
